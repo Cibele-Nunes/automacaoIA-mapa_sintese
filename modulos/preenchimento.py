@@ -2,53 +2,60 @@ from config import *
 import pandas as pd
 from shutil import copyfile
 from openpyxl import load_workbook
-from modulos.tratamento import erros_mes
 
-ANO_MES = f"{ANO}_{MES}"
-arquivo_oficial = CSV_OFICIAL / f"{ANO_MES}_dataframe_oficial.csv"
+# ==========================================================
+# CARREGAR CSV OFICIAL
+# ==========================================================
 
-if not arquivo_oficial.exists():
-    raise FileNotFoundError(f"CSV oficial não encontrado: {arquivo_oficial}")
+def carregar_csv_oficial(ano, mes):
 
-df_oficial = pd.read_csv(
-    arquivo_oficial,
-    sep=";",
-    encoding="utf-8-sig"
-)
+    ano_mes = f"{ano}_{mes}"
+    caminho = CSV_OFICIAL / f"{ano_mes}_dataframe_oficial.csv"
 
-print("✔ CSV oficial carregado:", arquivo_oficial.name)
-print("Colunas:", df_oficial.columns.tolist())
-print("Total de registros:", len(df_oficial))
-df_oficial.head()
+    if not caminho.exists():
+        raise FileNotFoundError(f"CSV oficial não encontrado: {caminho}")
 
-# Corrigir NOTA
-df_oficial["nota"] = (
-    df_oficial["nota"]
-    .astype(str)
-    .str.replace(",", ".", regex=False)
-    .str.strip()
-)
+    df = pd.read_csv(caminho, sep=";", encoding="utf-8-sig")
 
-df_oficial["nota"] = pd.to_numeric(df_oficial["nota"], errors="coerce")
+    print("✔ CSV oficial carregado:", caminho.name)
 
-# Corrigir DATA (FORMATO BRASILEIRO)
-df_oficial["data"] = pd.to_datetime(
-    df_oficial["data"],
-    dayfirst=True,
-    errors="coerce"
-)
+    return df
 
-# presença
-df_oficial["presenca"] = df_oficial["nota"].apply(
-    lambda x: "AUSENTE" if pd.isna(x) else "PRESENTE"
-)
 
-# resultado oficial
-df_oficial["resultado"] = df_oficial.apply(
-    lambda r: "REPROVADO" if r["presenca"]=="AUSENTE"
-    else ("APROVADO" if r["nota"]>=5 else "REPROVADO"),
-    axis=1
-)
+# ==========================================================
+# LIMPEZA E PADRONIZAÇÃO
+# ==========================================================
+
+def preparar_dados(df):
+
+    df = df.copy()
+
+    # Corrigir NOTA
+    df["nota"] = (
+        df["nota"]
+        .astype(str)
+        .str.replace(",", ".", regex=False)
+        .str.strip()
+    )
+
+    df["nota"] = pd.to_numeric(df["nota"], errors="coerce")
+
+    # Corrigir DATA (FORMATO BRASILEIRO)
+    df["data"] = pd.to_datetime(df["data"], dayfirst=True, errors="coerce")
+
+    # presença
+    df["presenca"] = df["nota"].apply(
+        lambda x: "AUSENTE" if pd.isna(x) else "PRESENTE"
+    )
+
+    # resultado oficial
+    df["resultado"] = df.apply(
+        lambda r: "REPROVADO" if r["presenca"]=="AUSENTE"
+        else ("APROVADO" if r["nota"]>=5 else "REPROVADO"),
+        axis=1
+    )
+
+    return df
 
 def remover_registros_invalidos(df):
     df = df.copy()
@@ -77,301 +84,263 @@ def remover_registros_invalidos(df):
 
     return df_limpo
 
-df_oficial = remover_registros_invalidos(df_oficial)
+def validar_csv_oficial(df):
+    """
+    Valida o CSV revisado antes de preencher o Excel.
+    BLOCO ANTI-ERRO HUMANO.
+    """
 
-print("Após limpeza:", len(df_oficial))
+    # 🔧 limpeza inicial
+    df = remover_registros_invalidos(df)
 
-# verificação automática (ANTI-ERRO HUMANO)
-erros = []
+    print("Após limpeza:", len(df))
 
-# Certifique-se de que 'nota' seja numérico antes das comparações.
-df_oficial["nota"] = pd.to_numeric(df_oficial["nota"], errors="coerce")
+    erros = []
 
+    # garantir tipo numérico
+    df["nota"] = pd.to_numeric(df["nota"], errors="coerce")
 
-# 1) Nota em aluno ausente
-erro_nota_ausente = df_oficial[
-    (df_oficial["presenca"] == "AUSENTE") &
-    (df_oficial["nota"].notna())
-]
-if len(erro_nota_ausente) > 0:
-    erros.append(f"Há {len(erro_nota_ausente)} alunos AUSENTES com nota.")
+    # 1) Nota em aluno ausente
+    erro_nota_ausente = df[
+        (df["presenca"] == "AUSENTE") &
+        (df["nota"].notna())
+    ]
+    if len(erro_nota_ausente) > 0:
+        erros.append(f"Há {len(erro_nota_ausente)} alunos AUSENTES com nota.")
 
-# 2) Resultado inválido
-valores_validos = ["APROVADO", "REPROVADO"]
-erro_resultado = df_oficial[
-    ~df_oficial["resultado"].isin(valores_validos)
-]
-if len(erro_resultado) > 0:
-    erros.append("Existem valores inválidos na coluna RESULTADO.")
+    # 2) Resultado inválido
+    valores_validos = ["APROVADO", "REPROVADO"]
+    erro_resultado = df[
+        ~df["resultado"].isin(valores_validos)
+    ]
+    if len(erro_resultado) > 0:
+        erros.append("Existem valores inválidos na coluna RESULTADO.")
 
-# 3) Área vazia
-erro_area = df_oficial[
-    df_oficial["area"].isna() |
-    (df_oficial["area"].astype(str).str.strip() == "")
-]
-if len(erro_area) > 0:
-    erros.append("Existem alunos sem área.")
+    # 3) Área vazia
+    erro_area = df[
+        df["area"].isna() |
+        (df["area"].astype(str).str.strip() == "")
+    ]
+    if len(erro_area) > 0:
+        erros.append("Existem alunos sem área.")
 
-# 4) Nome vazio
-erro_nome = df_oficial[
-    df_oficial["nome"].isna() |
-    (df_oficial["nome"].astype(str).str.strip() == "")
-]
-if len(erro_nome) > 0:
-    erros.append("Existem alunos sem nome.")
+    # 4) Nome vazio
+    erro_nome = df[
+        df["nome"].isna() |
+        (df["nome"].astype(str).str.strip() == "")
+    ]
+    if len(erro_nome) > 0:
+        erros.append("Existem alunos sem nome.")
 
-# 5) Nota incompatível com resultado
-erro_resultado_nota = df_oficial[
-    (df_oficial["nota"] >= 5.0) &
-    (df_oficial["resultado"] == "REPROVADO")
-]
+    # 5) Nota incompatível com resultado
+    erro_resultado_nota = df[
+        (df["nota"] >= 5.0) &
+        (df["resultado"] == "REPROVADO")
+    ]
+    if len(erro_resultado_nota) > 0:
+        erros.append("Existem alunos APROVADOS por nota mas marcados como REPROVADO.")
 
-if len(erro_resultado_nota) > 0:
-    erros.append("Existem alunos APROVADOS por nota mas marcados como REPROVADO.")
+    erro_resultado_nota2 = df[
+        (df["nota"] < 5.0) &
+        (df["presenca"] == "PRESENTE") &
+        (df["resultado"] == "APROVADO")
+    ]
+    if len(erro_resultado_nota2) > 0:
+        erros.append("Existem alunos com nota abaixo de 5,0 marcados como APROVADO.")
 
-erro_resultado_nota2 = df_oficial[
-    (df_oficial["nota"] < 5.0) &
-    (df_oficial["presenca"] == "PRESENTE") &
-    (df_oficial["resultado"] == "APROVADO")
-]
+    # 6) Nota fora do intervalo
+    erro_intervalo = df[
+        (df["nota"] < 0) |
+        (df["nota"] > 10)
+    ]
+    if len(erro_intervalo) > 0:
+        erros.append("Existem notas fora do intervalo 0 a 10.")
 
-if len(erro_resultado_nota2) > 0:
-    erros.append("Existem alunos com nota abaixo de 5,0 marcados como APROVADO.")
+    # resultado
+    if erros:
+        print("ERROS ENCONTRADOS:")
+        for e in erros:
+            print("- ", e)
+    else:
+        print("CSV validado com sucesso — pronto para continuar o pipeline")
 
-# 6) Nota negativa ou maior que 10
-erro_intervalo = df_oficial[
-    (df_oficial["nota"] < 0) |
-    (df_oficial["nota"] > 10)
-]
+    print("Total de registros:", len(df))
 
-if len(erro_intervalo) > 0:
-    erros.append("Existem notas fora do intervalo 0 a 10.")
-
-# Resultado
-if erros:
-    print("ERROS ENCONTRADOS:")
-    for e in erros:
-        print("- ", e)
-else:
-    print("CSV validado com sucesso — pronto para continuar o pipeline")
-
-print("Total de registros:", len(df_oficial))
+    return df
 
 # =========================================================
 # CARREGAMENTO E ABERTURA DO ARQUIVO ANUAL
 # =========================================================
 
-ARQUIVO_ANUAL = PASTA_MAPA_ANUAL / f"MAPA_SINTESE_{ANO}.xlsx"
+def carregar_arquivo_anual(ano):
+    """
+    Carrega (ou cria) o arquivo anual do mapa síntese.
+    """
 
-# Se o arquivo anual ainda não existir, cria a partir do modelo
-if not ARQUIVO_ANUAL.exists():
-    print("Arquivo anual não encontrado.")
-    print("Criando a partir do modelo base...")
-    copyfile(ARQUIVO_MODELO, ARQUIVO_ANUAL)
-else:
-    print("Arquivo anual encontrado. Será atualizado.")
+    ARQUIVO_ANUAL = PASTA_MAPA_ANUAL / f"MAPA_SINTESE_{ano}.xlsx"
 
-workbook = load_workbook(ARQUIVO_ANUAL)
-
-ws_fundamental = workbook["ENSINO FUNDAMENTAL"]
-ws_medio = workbook["ENSINO MÉDIO"]
-
-
-
-print(ARQUIVO_ANUAL)
-print(ARQUIVO_ANUAL.exists())
-print(ARQUIVO_ANUAL.stat().st_size)
-
-if erros and MODO_EXECUCAO == "PRODUCAO":
-    print("🚫 MÊS INCOMPLETO — Excel NÃO será gerado")
-
-    for e in erros_mes:
-        print("⚠️", e)
-
-else:
-    if erros:
-        print("⚠️ Mês incompleto, mas permitido em modo AJUSTE")
-        for e in erros_mes:
-            print("⚠️", e)
+    # cria se não existir
+    if not ARQUIVO_ANUAL.exists():
+        print("Arquivo anual não encontrado.")
+        print("Criando a partir do modelo base...")
+        copyfile(ARQUIVO_MODELO, ARQUIVO_ANUAL)
     else:
-        print("✅ Mês completo")
+        print("Arquivo anual encontrado. Será atualizado.")
 
+    # carrega workbook
+    workbook = load_workbook(ARQUIVO_ANUAL)
 
-print(ARQUIVO_MODELO)
-print(ARQUIVO_MODELO.exists())
+    ws_fundamental = workbook["ENSINO FUNDAMENTAL"]
+    ws_medio = workbook["ENSINO MÉDIO"]
 
-print("Arquivo carregado:")
-print(ARQUIVO_MODELO)
+    # 🔍 DEBUG (mantido, como você já usa)
+    print("\n--- DEBUG EXCEL ---")
+    print("Arquivo anual:", ARQUIVO_ANUAL)
+    print("Existe?", ARQUIVO_ANUAL.exists())
+    print("Tamanho:", ARQUIVO_ANUAL.stat().st_size)
 
-print("Sheets disponíveis:")
-print(workbook.sheetnames)
+    print("Modelo:", ARQUIVO_MODELO)
+    print("Modelo existe?", ARQUIVO_MODELO.exists())
 
-df_final = df_oficial.copy()
+    print("Sheets disponíveis:")
+    print(workbook.sheetnames)
+    print("-------------------\n")
 
-# padronização FINAL (garantia absoluta antes do Excel)
-df_final.columns = df_final.columns.str.lower().str.strip()
+    return workbook, ws_fundamental, ws_medio, ARQUIVO_ANUAL
 
-df_final["nome"] = df_final["nome"].astype(str).str.strip()
-df_final["area"] = df_final["area"].astype(str).str.upper().str.strip()
-df_final["etapa"] = df_final["etapa"].astype(str).str.upper().str.strip()
-df_final["presenca"] = df_final["presenca"].astype(str).str.upper().str.strip()
-df_final["resultado"] = df_final["resultado"].astype(str).str.upper().str.strip()
+def padronizacao_final(df):
+    """
+    Padronização final antes de escrever no Excel.
+    Garante consistência total dos dados.
+    """
 
-df_final["nota"] = pd.to_numeric(df_final["nota"], errors="coerce")
+    df_final = df.copy()
 
-print("Dados oficiais carregados para escrita:", len(df_final))
-df_final.head()
+    # padronização de colunas
+    df_final.columns = df_final.columns.str.lower().str.strip()
 
+    # padronização de conteúdo
+    df_final["nome"] = df_final["nome"].astype(str).str.strip()
+    df_final["area"] = df_final["area"].astype(str).str.upper().str.strip()
+    df_final["etapa"] = df_final["etapa"].astype(str).str.upper().str.strip()
+    df_final["presenca"] = df_final["presenca"].astype(str).str.upper().str.strip()
+    df_final["resultado"] = df_final["resultado"].astype(str).str.upper().str.strip()
 
-# ==================================================
-# ÁREA ESTRUTURAL DO MODELO (independente da etapa)
-# ==================================================
+    df_final["nota"] = pd.to_numeric(df_final["nota"], errors="coerce")
 
-MAPA_ESTRUTURA_EXCEL = {
-    "LINGUAGENS E SUAS TECNOLOGIAS": "LINGUAGENS",
-    "REDAÇÃO": "REDAÇÃO",
-    "CIÊNCIAS HUMANAS": "HISTÓRIA E GEOGRAFIA",
-    "MATEMÁTICA E SUAS TECNOLOGIAS": "MATEMÁTICA",
-    "CIÊNCIAS DA NATUREZA": "CIÊNCIAS",
+    print("Dados oficiais carregados para escrita:", len(df_final))
 
-    # nomes que já podem vir traduzidos
-    "LINGUAGENS": "LINGUAGENS",
-    "HUMANAS": "HISTÓRIA E GEOGRAFIA",
-    "MATEMÁTICA": "MATEMÁTICA",
-    "REDAÇÃO": "REDAÇÃO",
-    "REDACAO": "REDAÇÃO",
-    "NATUREZA": "CIÊNCIAS",
-    "CIÊNCIAS": "CIÊNCIAS"
-}
+    return df_final
 
+def aplicar_mapa_areas(df):
+    """
+    Traduz as áreas do CSV para o padrão do Excel.
+    """
 
-df_final["area_estrutura"] = df_final["area"].map(MAPA_ESTRUTURA_EXCEL)
+    df = df.copy()
 
-# validação obrigatória
-nao_traduzidas = df_final[df_final["area_estrutura"].isna()][["area"]].drop_duplicates()
+    df["area_estrutura"] = df["area"].map(MAPA_ESTRUTURA_EXCEL)
 
-if len(nao_traduzidas) > 0:
-    print("⚠️ Áreas não reconhecidas:")
-    print(nao_traduzidas)
-else:
-    print("Todas as áreas reconhecidas pelo modelo!")
+    # validação obrigatória
+    nao_traduzidas = df[df["area_estrutura"].isna()][["area"]].drop_duplicates()
+
+    if len(nao_traduzidas) > 0:
+        print("⚠️ Áreas não reconhecidas:")
+        print(nao_traduzidas)
+    else:
+        print("Todas as áreas reconhecidas pelo modelo!")
+
+    return df
 
 # ==========================================
 # EXTRAIR MÊS DA DATA
 # ==========================================
 
-MESES_PT = {
-    3:"MARÇO",4:"ABRIL",5:"MAIO",6:"JUNHO",
-    7:"JULHO",8:"AGOSTO",9:"SETEMBRO",
-    10:"OUTUBRO",11:"NOVEMBRO",12:"DEZEMBRO"
-}
+def extrair_mes(df):
+    """
+    Cria a coluna 'mes' a partir da coluna 'data'.
+    """
 
-df_final["mes"] = df_final["data"].dt.month.map(MESES_PT)
+    df = df.copy()
 
-print("Meses encontrados:")
-print(df_final["mes"].unique())
+    df["mes"] = df["data"].dt.month.map(MESES_PT)
 
+    print("Meses encontrados:")
+    print(df["mes"].unique())
 
-# =========================================================
-# DIAGNÓSTICO RÁPIDO DE DATA
-# =========================================================
-print("Tipo da coluna data:", df_oficial["data"].dtype)
-print("Mês encontrado:", df_oficial["data"].dt.month.unique())
+    return df
 
-COLUNAS_TURNO = {
-    "VESPERTINO": {
-        "INSCRITOS": "H",
-        "PRESENTES": "I",
-        "AUSENTES": "J",
-        "APROVADOS": "K",
-        "REPROVADOS": "L"
-    },
-    "NOTURNO": {
-        "INSCRITOS": "M",
-        "PRESENTES": "N",
-        "AUSENTES": "O",
-        "APROVADOS": "P",
-        "REPROVADOS": "Q"
-    }
-}
+def validar_mes_unico(df):
+    """
+    Garante que o CSV contém apenas um mês.
+    """
 
-print("Colunas configuradas dos turnos.")
+    meses_csv = df["mes"].dropna().unique()
+
+    if len(meses_csv) != 1:
+        raise ValueError(
+            f"CSV deve conter apenas 1 mês. Encontrado: {meses_csv}"
+        )
+
+    mes_atual = meses_csv[0]
+
+    print("Mês detectado no CSV:", mes_atual)
+
+    return mes_atual
+
+# diagnóstico de debug - usar só quando precisar
+# def diagnostico_datas(df):
+#    print("Tipo da coluna data:", df["data"].dtype)
+#    print("Meses numéricos:", df["data"].dt.month.unique())
 
 # ============================================================
 # CRIA TABELA RESUMO OFICIAL PARA PREENCHER O MODELO
 # ============================================================
 
-df = df_final.copy()
+def gerar_resumo(df):
+    """
+    Gera a tabela resumo para preenchimento do Excel.
+    """
 
-# padronizações de segurança
-df["presenca"] = df["presenca"].str.upper().str.strip()
-df["resultado"] = df["resultado"].str.upper().str.strip()
-df["turno"] = df["turno"].str.upper().str.strip()
-df["etapa"] = df["etapa"].str.upper().str.strip()
-df["area_estrutura"] = df["area_estrutura"].str.upper().str.strip()
-df["mes"] = df["mes"].str.upper().str.strip()
+    df = df.copy()
 
-# cria indicadores numéricos
-df["inscrito"] = 1
-df["presente"] = (df["presenca"] == "PRESENTE").astype(int)
-df["ausente"] = (df["presenca"] == "AUSENTE").astype(int)
-df["aprovado"] = (df["resultado"] == "APROVADO").astype(int)
-df["reprovado"] = (df["resultado"] == "REPROVADO").astype(int)
+    # PADRONIZAÇÃO DE SEGURANÇA (ANTES DO GROUPBY)
+    df["presenca"] = df["presenca"].astype(str).str.upper().str.strip()
+    df["resultado"] = df["resultado"].astype(str).str.upper().str.strip()
+    df["turno"] = df["turno"].astype(str).str.upper().str.strip()
+    df["etapa"] = df["etapa"].astype(str).str.upper().str.strip()
+    df["area_estrutura"] = df["area_estrutura"].astype(str).str.upper().str.strip()
+    df["mes"] = df["mes"].astype(str).str.upper().str.strip()
 
-# agrupamento final
-resumo = (
-    df.groupby(["etapa","mes","area_estrutura","turno"], as_index=False)
-      .agg({
-          "inscrito":"sum",
-          "presente":"sum",
-          "ausente":"sum",
-          "aprovado":"sum",
-          "reprovado":"sum"
-      })
-)
+    # indicadores
+    df["INSCRITOS"] = 1
+    df["PRESENTES"] = (df["presenca"] == "PRESENTE").astype(int)
+    df["AUSENTES"] = (df["presenca"] == "AUSENTE").astype(int)
+    df["APROVADOS"] = (df["resultado"] == "APROVADO").astype(int)
+    df["REPROVADOS"] = (df["resultado"] == "REPROVADO").astype(int)
 
-# nomes finais (iguais aos do modelo)
-resumo = resumo.rename(columns={
-    "inscrito":"INSCRITOS",
-    "presente":"PRESENTES",
-    "ausente":"AUSENTES",
-    "aprovado":"APROVADOS",
-    "reprovado":"REPROVADOS"
-})
+    # agrupamento
+    resumo = (
+        df.groupby(
+            ["etapa", "mes", "area_estrutura", "turno"],
+            as_index=False
+        )
+        .agg({
+            "INSCRITOS": "sum",
+            "PRESENTES": "sum",
+            "AUSENTES": "sum",
+            "APROVADOS": "sum",
+            "REPROVADOS": "sum"
+        })
+    )
 
-print("Resumo criado com sucesso!")
-print(resumo.sort_values(["etapa","mes","area_estrutura","turno"]))
+    print("Resumo gerado com sucesso.")
+    print("Total de linhas no resumo:", len(resumo))
 
-
-# ============================================================
-# LOCALIZAÇÃO REAL DAS CÉLULAS NO MODELO (POR COORDENADAS)
-# ============================================================
-
-# linha inicial de cada mês
-LINHAS_MESES = {
-    "MARÇO": 16,
-    "ABRIL": 27,
-    "MAIO": 38,
-    "JUNHO": 49,
-    "JULHO": 60,
-    "AGOSTO": 71,
-    "SETEMBRO": 82,
-    "OUTUBRO": 93,
-    "NOVEMBRO": 104,
-    "DEZEMBRO": 115
-}
-
-# distância das áreas em relação ao mês
-OFFSET_AREAS = {
-    "LINGUAGENS": 3,
-    "REDAÇÃO": 4,
-    "HISTÓRIA E GEOGRAFIA": 5,
-    "MATEMÁTICA": 6,
-    "CIÊNCIAS": 7
-}
+    return resumo
 
 
-def escrever_no_modelo(ws, etapa_nome):
+def escrever_no_modelo(ws, etapa_nome, resumo):
     """
     Preenche UMA planilha inteira (fundamental ou médio)
     usando a tabela resumo já calculada
@@ -408,41 +377,6 @@ def escrever_no_modelo(ws, etapa_nome):
     print(f"\n🔎 Etapa: {etapa_nome}")
     print("Linhas encontradas:", len(df_etapa))
 
-
-print(resumo["turno"].unique())
-
-print(sorted(resumo["area_estrutura"].unique()))
-
-print(resumo["mes"].unique())
-
-print(resumo["etapa"].value_counts())
-
-print("Etapas no resumo:")
-print(resumo["etapa"].unique())
-
-print("\nTurnos no resumo:")
-print(resumo["turno"].unique())
-
-print("\nÁreas no resumo:")
-print(sorted(resumo["area_estrutura"].unique()))
-
-print("\nResumo completo:")
-print(resumo.head(20))
-
-
-# ============================================================
-# IDENTIFICAR MÊS DO CSV (SISTEMA MÊS A MÊS)
-# ============================================================
-
-meses_csv = df_final["mes"].dropna().unique()
-
-if len(meses_csv) != 1:
-    raise ValueError(f"CSV deve conter apenas 1 mês. Encontrado: {meses_csv}")
-
-MES_ATUAL = meses_csv[0]
-
-print("Mês detectado no CSV:", MES_ATUAL)
-
 def verificar_mes_preenchido(ws, mes):
     """
     Verifica se o mês já foi preenchido.
@@ -470,35 +404,50 @@ def verificar_mes_preenchido(ws, mes):
 
     return False
 
-ja_preenchido_fund = verificar_mes_preenchido(ws_fundamental, MES_ATUAL)
-ja_preenchido_medio = verificar_mes_preenchido(ws_medio, MES_ATUAL)
+def executar_preenchimento(ano, mes):
 
-if ja_preenchido_fund or ja_preenchido_medio:
-  raise ValueError(
-      f"O mês {MES_ATUAL} já possui dados preenchidos no arquivo anual. "
-      "Operação bloqueada para evitar sobrescrita."
-  )
+    df = carregar_csv_oficial(ano, mes)
 
-print("Mês ainda não preenchido. Pode prosseguir.")
+    df = preparar_dados(df)
 
-# ENSINO FUNDAMENTAL
-escrever_no_modelo(ws_fundamental, "ENSINO FUNDAMENTAL")
+    df = validar_csv_oficial(df)
 
-# ENSINO MÉDIO
-escrever_no_modelo(ws_medio, "ENSINO MÉDIO")
+    df = padronizacao_final(df)
 
-print("Planilhas preenchidas com sucesso!")
+    df = aplicar_mapa_areas(df)
 
-workbook.save(ARQUIVO_ANUAL)
+    df = extrair_mes(df)
 
-print("Arquivo anual atualizado com sucesso!")
-print("Local:", ARQUIVO_ANUAL)
+    MES_ATUAL = validar_mes_unico(df)
 
-# ============================================================
-# COMANDO UTILIZADO APENAS EM DEZEMBRO APÓS
-# PREENCHIMENTO DE TODAS AS TABELAS DAS PLANILHAS
-# ============================================================
+    workbook, ws_fundamental, ws_medio, ARQUIVO_ANUAL = carregar_arquivo_anual(ano)
 
-workbook.save(ARQUIVO_FINAL)
+    ja_preenchido_fund = verificar_mes_preenchido(ws_fundamental, MES_ATUAL)
+    ja_preenchido_medio = verificar_mes_preenchido(ws_medio, MES_ATUAL)
 
-print(ARQUIVO_FINAL, "preenchido com sucesso!")
+    if ja_preenchido_fund or ja_preenchido_medio:
+        raise ValueError("Mês já preenchido")
+
+    resumo = gerar_resumo(df)
+
+    escrever_no_modelo(ws_fundamental, "ENSINO FUNDAMENTAL", resumo)
+    escrever_no_modelo(ws_medio, "ENSINO MÉDIO", resumo)
+
+    workbook.save(ARQUIVO_ANUAL)
+
+    # caso dezembro
+    if MES_ATUAL == "DEZEMBRO":
+
+        ARQUIVO_FINAL = (
+            PASTA_RESULTADOS
+            / "arquivo_final"
+            / f"SALVADOR - ROBERTO SANTOS - MAPA SINTESE POR UC MARÇO A DEZEMBRO {ANO}.xlsx"
+    )
+
+        ARQUIVO_FINAL.parent.mkdir(parents=True, exist_ok=True)
+
+        workbook.save(ARQUIVO_FINAL)
+
+        print("Arquivo final gerado com sucesso!")
+        print("Local:", ARQUIVO_FINAL)
+

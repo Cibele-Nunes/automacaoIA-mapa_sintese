@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).parent
 # CONFIG GERAIS
 # ===============================
 ANO = "2025"
-MES = "07_JULHO"
+MES = "09_SETEMBRO"
 MODO_EXECUCAO = "AJUSTE"
 # NODO_EXECUCAO pode ser "AJUSTE" ou "PRODUCAO"
 # "AJUSTE" → permite rodar mesmo incompleto
@@ -28,13 +28,15 @@ PASTA_SISTEMA = PASTA_DADOS / "sistema"
 # subpastas
 PASTA_IMAGENS = Path(PASTA_ENTRADA, ANO, MES)
 PASTA_IMAGENS_PROCESSADAS = Path(PASTA_PROCESSADAS, "imagens_processadas")
+PASTA_JSON_EXTRAIDO = Path(PASTA_JSON, ANO, MES)
+PASTA_LOGS_IA = PASTA_PROCESSADAS, "pasta_logs"
 PASTA_LOGS_EXECUCAO = PASTA_RESULTADOS / "logs_execucao"
 PASTA_LOGS_EXECUCAO.mkdir(parents=True, exist_ok=True)
 PASTA_MAPA_ANUAL = PASTA_RESULTADOS / "mapa_sintese_anual"
 PASTA_MAPA_ANUAL.mkdir(parents=True, exist_ok=True)
 CSV_OFICIAL = Path(PASTA_PROCESSADAS, "csv_revisado")
 ARQUIVO_MODELO = Path(PASTA_SISTEMA, "modelo_base", "modelo.xlsx")
-ARQUIVO_FINAL = Path(PASTA_RESULTADOS, "arquivo_final", "SALVADOR - ROBERTO SANTOS - MAPA SINTESE POR UC MARÇO A DEZEMBRO 2025.xlsx")
+ARQUIVO_FINAL_TEMPLATE = (PASTA_RESULTADOS / "arquivo_final"/ "SALVADOR - ROBERTO SANTOS - MAPA SINTESE POR UC MARÇO A DEZEMBRO {ano}.xlsx")
 
 # cria automaticamente se não existir
 for pasta in [
@@ -46,10 +48,22 @@ for pasta in [
 ]:
     pasta.mkdir(parents=True, exist_ok=True)
 
+CAMINHO_API_KEY = Path(PASTA_SISTEMA, "sistema_interno", "chave_gemini.txt")
+
+def carregar_api_key():
+    if not CAMINHO_API_KEY.exists():
+        raise FileNotFoundError("Arquivo da API key não encontrado.")
+
+    with open(CAMINHO_API_KEY, "r", encoding="utf-8") as f:
+        return f.read().strip()
+
 # ===============================
 # ARQUIVO DE PENDENTES
 # ===============================
 CAMINHO_PENDENTES = PASTA_JSON / "listas_pendentes.json"
+LOGS_VALIDACAO = PASTA_PROCESSADAS / "logs_validacao"
+LOGS_EXECUCAO = PASTA_LOGS_EXECUCAO / "logs_execucao"
+
 
 prompt = """
 Você é um extrator de dados de alta precisão, sua tarefa é analisar imagens que contêm tabelas com listas oficiais de presença de alunos.
@@ -220,3 +234,78 @@ FORMATO DE SAÍDA (JSON PURO)
   ]
 }
 """
+
+# ===============================
+# VARIÁVEIS DO PREENCHIMENTO
+# ===============================
+
+# ==================================================
+# ÁREA ESTRUTURAL DO MODELO (independente da etapa)
+# ==================================================
+
+MAPA_ESTRUTURA_EXCEL = {
+    "LINGUAGENS E SUAS TECNOLOGIAS": "LINGUAGENS",
+    "REDAÇÃO": "REDAÇÃO",
+    "CIÊNCIAS HUMANAS": "HISTÓRIA E GEOGRAFIA",
+    "MATEMÁTICA E SUAS TECNOLOGIAS": "MATEMÁTICA",
+    "CIÊNCIAS DA NATUREZA": "CIÊNCIAS",
+
+    # nomes que já podem vir traduzidos
+    "LINGUAGENS": "LINGUAGENS",
+    "HUMANAS": "HISTÓRIA E GEOGRAFIA",
+    "MATEMÁTICA": "MATEMÁTICA",
+    "REDAÇÃO": "REDAÇÃO",
+    "REDACAO": "REDAÇÃO",
+    "NATUREZA": "CIÊNCIAS",
+    "CIÊNCIAS": "CIÊNCIAS"
+}
+
+MESES_PT = {
+    3:"MARÇO",4:"ABRIL",5:"MAIO",6:"JUNHO",
+    7:"JULHO",8:"AGOSTO",9:"SETEMBRO",
+    10:"OUTUBRO",11:"NOVEMBRO",12:"DEZEMBRO"
+}
+
+COLUNAS_TURNO = {
+    "VESPERTINO": {
+        "INSCRITOS": "H",
+        "PRESENTES": "I",
+        "AUSENTES": "J",
+        "APROVADOS": "K",
+        "REPROVADOS": "L"
+    },
+    "NOTURNO": {
+        "INSCRITOS": "M",
+        "PRESENTES": "N",
+        "AUSENTES": "O",
+        "APROVADOS": "P",
+        "REPROVADOS": "Q"
+    }
+}
+
+# ============================================================
+# LOCALIZAÇÃO REAL DAS CÉLULAS NO MODELO (POR COORDENADAS)
+# ============================================================
+
+# linha inicial de cada mês
+LINHAS_MESES = {
+    "MARÇO": 16,
+    "ABRIL": 27,
+    "MAIO": 38,
+    "JUNHO": 49,
+    "JULHO": 60,
+    "AGOSTO": 71,
+    "SETEMBRO": 82,
+    "OUTUBRO": 93,
+    "NOVEMBRO": 104,
+    "DEZEMBRO": 115
+}
+
+# distância das áreas em relação ao mês
+OFFSET_AREAS = {
+    "LINGUAGENS": 3,
+    "REDAÇÃO": 4,
+    "HISTÓRIA E GEOGRAFIA": 5,
+    "MATEMÁTICA": 6,
+    "CIÊNCIAS": 7
+}

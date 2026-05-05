@@ -1,22 +1,26 @@
 import cv2
 import os
 import re
-from config import *
 import numpy as np
 from datetime import datetime
 from collections import defaultdict
 from pathlib import Path
+from config import *
 
-#=========================================================
-# ORGANIZAÇÃO DE ARQUIVOS — LEITURA DIRETA DO DRIVE
-#=========================================================
+
+# ==========================================================
+# ORGANIZAÇÃO DE ARQUIVOS
+# ==========================================================
 # Garante que a pasta existe
 # Lista somente imagens válidas
 # Evita rodar pipeline vazio
 # Não usa mais upload manual
 # Funciona para qualquer funcionário
 
-def organizacao_arquivos(lista_imagens):
+def organizacao_arquivos():
+    """
+    Lê imagens da pasta e valida entrada
+    """
 
     print("Selecionando período para processamento...")
 
@@ -34,30 +38,29 @@ def organizacao_arquivos(lista_imagens):
     print("Total de imagens encontradas:", len(lista_imagens))
 
     if not lista_imagens:
-        raise ValueError("Nenhuma imagem encontrada. Verifique a pasta.")
-    else:
-        print("Imagens prontas para processamento.")
+        raise ValueError("Nenhuma imagem encontrada.")
+    
+    print("Imagens prontas para processamento.")
 
-# =========================================================
+    return lista_imagens
+
+
+# ==========================================================
 # FUNÇÕES AUXILIARES
-# =========================================================
+# ==========================================================
 
 def extrair_data(nome_arquivo):
     match = re.search(r'\d{4}-\d{2}-\d{2}', nome_arquivo)
-    if match:
-        return match.group(0)
-    return None
+    return match.group(0) if match else None
+
 
 def eh_dia_linguagens(data_str):
     try:
         data = datetime.strptime(data_str, "%Y-%m-%d")
-        dia_semana = data.weekday()
-
-        # segunda-feira = 0
-        return dia_semana == 0
-
+        return data.weekday() == 0  # segunda-feira
     except:
         return False
+
 
 def detectar_linhas_horizontais(imagem):
     # binarização leve
@@ -65,15 +68,13 @@ def detectar_linhas_horizontais(imagem):
 
     # kernel horizontal
     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (40, 1))
-
     linhas = cv2.morphologyEx(binaria, cv2.MORPH_OPEN, kernel)
 
     return linhas
 
+
 def encontrar_linha_de_corte(imagem, nome_arquivo):
     linhas = detectar_linhas_horizontais(imagem)
-
-    cv2.imwrite(f"debug_{nome_arquivo}.jpg", linhas)
 
     altura = linhas.shape[0]
 
@@ -89,8 +90,8 @@ def encontrar_linha_de_corte(imagem, nome_arquivo):
 
     return corte
 
-def segmentar_linhas_alunos(imagem, nome_arquivo="debug"):
 
+def segmentar_linhas_alunos(imagem, nome_arquivo="debug"):
     altura, largura = imagem.shape
 
     # =====================================================
@@ -103,9 +104,6 @@ def segmentar_linhas_alunos(imagem, nome_arquivo="debug"):
     # =====================================================
     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (50, 5))
     dilatada = cv2.dilate(binaria, kernel, iterations=1)
-
-    # DEBUG opcional
-    # cv2.imwrite(f"debug_dilatada_{nome_arquivo}.jpg", dilatada)
 
     # =====================================================
     # 3. PROJEÇÃO VERTICAL (soma por linha)
@@ -140,26 +138,27 @@ def segmentar_linhas_alunos(imagem, nome_arquivo="debug"):
     imagens_linhas = []
 
     for (y1, y2) in regioes:
-
-        altura_linha = y2 - y1
-
-        if altura_linha < 15:
+        if (y2 - y1) < 15:
             continue
 
         linha_img = imagem[y1:y2, :]
-
         imagens_linhas.append(linha_img)
 
     return imagens_linhas
 
-# =========================================================
-# FUNÇÃO PRINCIPAL DE PRÉ-PROCESSAMENTO
-# =========================================================
+# ==========================================================
+# FUNÇÃO PRINCIPAL - PROCESSAMENTO DE UMA IMAGEM
+# ==========================================================
 
 def preprocessar_e_dividir(caminho_entrada, pasta_saida):
-
     imagem = cv2.imread(caminho_entrada)
+
+    if imagem is None:
+        print(f"❌ Erro ao carregar: {caminho_entrada}")
+        return []
+
     nome_arquivo = os.path.basename(caminho_entrada)
+    nome_base = os.path.splitext(nome_arquivo)[0]
 
     data = extrair_data(nome_arquivo)
 
@@ -182,15 +181,12 @@ def preprocessar_e_dividir(caminho_entrada, pasta_saida):
 
     imagens_saida = []
 
-    nome_base = os.path.splitext(nome_arquivo)[0]
-
     # =====================================================
     # CASO 1 — LINGUAGENS (PRECISA CORTAR)
     # =====================================================
     if eh_dia_linguagens(data):
 
         corte = encontrar_linha_de_corte(imagem_processada, nome_arquivo)
-
         margem = 10
 
         parte1 = imagem_processada[:corte - margem, :]
@@ -199,17 +195,17 @@ def preprocessar_e_dividir(caminho_entrada, pasta_saida):
         # =================================================
         # SEGMENTAÇÃO APENAS DAS PARTES
         # =================================================
-        linhas_parte1 = segmentar_linhas_alunos(parte1, nome_base + "_p1")
-        linhas_parte2 = segmentar_linhas_alunos(parte2, nome_base + "_p2")
+        linhas_p1 = segmentar_linhas_alunos(parte1, nome_base + "_p1")
+        linhas_p2 = segmentar_linhas_alunos(parte2, nome_base + "_p2")
 
         # salvar parte 1
-        for i, linha in enumerate(linhas_parte1):
+        for i, linha in enumerate(linhas_p1):
             caminho = os.path.join(pasta_saida, f"{nome_base}_p1_linha_{i}.jpg")
             cv2.imwrite(caminho, linha)
             imagens_saida.append(caminho)
 
         # salvar parte 2
-        for i, linha in enumerate(linhas_parte2):
+        for i, linha in enumerate(linhas_p2):
             caminho = os.path.join(pasta_saida, f"{nome_base}_p2_linha_{i}.jpg")
             cv2.imwrite(caminho, linha)
             imagens_saida.append(caminho)
@@ -232,12 +228,16 @@ def preprocessar_e_dividir(caminho_entrada, pasta_saida):
 
     return imagens_saida
 
-# =========================================================
-# EXECUÇÃO
-# =========================================================
+
+# ==========================================================
+# EXECUÇÃO - LOOP PRINCIPAL
+# ==========================================================
 
 def preprocessar_imagens(lista_imagens, pasta_saida):
     print("Iniciando pré-processamento...")
+
+    pasta_saida = Path(pasta_saida)
+    pasta_saida.mkdir(parents=True, exist_ok=True)
 
     lista_processadas = []
 
@@ -263,25 +263,18 @@ def preprocessar_imagens(lista_imagens, pasta_saida):
 
     return lista_processadas
 
+
+# ==========================================================
+# AGRUPAMENTO
+# ==========================================================
+
 def agrupar_listas(imagens_processadas):
-    """
-    Agrupa imagens por lista.
-
-    Ex:
-    noturno_2025-07-14_p1_linha_1.jpg
-    noturno_2025-07-14_p1_linha_2.jpg
-
-    → vira um grupo: noturno_2025-07-14
-    """
 
     listas = defaultdict(list)
 
     for img in sorted(imagens_processadas):
         nome = Path(img).stem.lower()
-
-        # pega turno + data
-        chave_lista = "_".join(nome.split("_")[:2])
-
-        listas[chave_lista].append(img)
+        chave = "_".join(nome.split("_")[:2])
+        listas[chave].append(img)
 
     return listas

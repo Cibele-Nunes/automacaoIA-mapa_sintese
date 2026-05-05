@@ -1,3 +1,11 @@
 venv/
 .vscode/
 __pycache__/
+# chave da API
+dados/sistema/sistema_interno/
+
+# arquivos do modelo
+dados/sistema/modelo_base/
+
+# arquivos finais sensíveis
+dados/resultados/

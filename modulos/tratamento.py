@@ -1,5 +1,7 @@
 import re
 import pandas as pd
+from datetime import datetime
+from pathlib import Path
 from utils.logs import *
 
 def normalizar_area(area):
@@ -179,9 +181,6 @@ def pipeline_tratamento(todos_alunos):
 
     return df
 
-import pandas as pd
-from datetime import datetime
-
 def validar_dados(df):
 
     df_erros = pd.DataFrame()
@@ -255,8 +254,6 @@ def validar_dados(df):
         print("Nenhuma inconsistência encontrada.")
 
     return df
-
-import pandas as pd
 
 def validar_inconsistencias(df):
     erros = []
@@ -361,12 +358,30 @@ def executar_validacoes(df):
         for e in erros[:10]:
             print(e)
 
-        salvar_log_validacoes_ia(erros, LOGS_VALIDACAO)
+        salvar_log_validacoes_ia(erros, PASTA_LOGS_IA)
 
     else:
         print("✅ Nenhuma inconsistência crítica encontrada")
 
     return erros
+
+def salvar_csv_revisao(df, pasta_resultados, ano, mes):
+
+    pasta = Path(pasta_resultados) / "csv_revisao"
+    pasta.mkdir(parents=True, exist_ok=True)
+
+    caminho = pasta / f"{ano}_{mes}_dataframe_final.csv"
+
+    df.to_csv(
+        caminho,
+        index=False,
+        encoding="utf-8-sig",
+        sep=";"
+    )
+
+    print("📄 CSV gerado:", caminho)
+
+    return caminho
 
 def validar_mes_completo(df, mes):
     problemas = []
@@ -410,69 +425,48 @@ def validar_mes_completo(df, mes):
 
     return problemas
 
-df_final = pipeline_tratamento(todos_alunos)
+def executar_tratamento(todos_alunos, ano, mes, pasta_resultados):
 
-# validação estrutural (gera CSV de erros)
-df_final = validar_dados(df_final)
+    inicio_execucao = datetime.now()
 
-# 🔥 validação inteligente (IA)
-erros = executar_validacoes(df_final)
+    total_brutos = len(todos_alunos)
 
-erros_mes = validar_mes_completo(df_final, MES)
+    df = pipeline_tratamento(todos_alunos)
+    df = validar_dados(df)
 
-print("Total de linhas finais:", len(df_final))
-df_final.head(20)
+    erros = executar_validacoes(df)
+    erros_mes = validar_mes_completo(df, mes)
 
-total_final = len(df_final)
-total_erros = len(erros)
+    total_final = len(df)
+    total_erros = len(erros)
 
-from pathlib import Path
+    print("Total de linhas finais:", total_final)
 
-def salvar_csv_revisao(df, pasta_resultados, ano, mes):
+    caminho_csv = salvar_csv_revisao(df, pasta_resultados, ano, mes)
 
-    pasta = Path(pasta_resultados) / "csv_revisao"
-    pasta.mkdir(parents=True, exist_ok=True)
+    fim_execucao = datetime.now()
+    tempo_execucao = (fim_execucao - inicio_execucao).total_seconds()
 
-    caminho = pasta / f"{ano}_{mes}_dataframe_final.csv"
+    info_execucao = {
+        "ano": ano,
+        "mes": mes,
+        "total_registros_brutos": total_brutos,
+        "total_registros_final": total_final,
+        "total_erros_validacao_ia": total_erros,
+        "tempo_execucao_segundos": tempo_execucao,
+        "inicio_execucao": inicio_execucao.isoformat(),
+        "fim_execucao": fim_execucao.isoformat(),
+        "status": "SUCESSO" if total_erros == 0 else "COM_ALERTAS"
+    }
 
-    df.to_csv(
-        caminho,
-        index=False,
-        encoding="utf-8-sig",
-        sep=";"
-    )
+    salvar_log_execucao(info_execucao, PASTA_LOGS_EXECUCAO)
 
-    print("📄 CSV gerado:", caminho)
+    resumo = gerar_resumo_execucao(info_execucao)
+    print(resumo)
+    salvar_resumo_txt(resumo, PASTA_LOGS_EXECUCAO)
 
-    return caminho
+    return df, erros, erros_mes, caminho_csv
 
-# Log - final
 
-fim_execucao = datetime.now()
 
-tempo_execucao = (fim_execucao - inicio_execucao).total_seconds()
 
-inicio_formatado = inicio_execucao.strftime("%d/%m/%Y %H:%M:%S")
-
-fim_formatado = fim_execucao.strftime("%d/%m/%Y %H:%M:%S")
-
-info_execucao = {
-    "ano": ANO,
-    "mes": MES,
-    "total_arquivos_json": total_jsons,
-    "total_registros_brutos": total_brutos,
-    "total_registros_final": total_final,
-    "total_erros_validacao_ia": total_erros,
-    "tempo_execucao_segundos": tempo_execucao,
-    "inicio_execucao": inicio_formatado,
-    "inicio_execucao": inicio_execucao.isoformat(),
-    "fim_execucao": fim_formatado,
-    "fim_execucao": fim_execucao.isoformat(),
-    "status": "SUCESSO" if total_erros == 0 else "COM_ALERTAS"
-}
-
-salvar_log_execucao(info_execucao, PASTA_LOGS_EXECUCAO)
-
-resumo = gerar_resumo_execucao(info_execucao)
-print(resumo)
-salvar_resumo_txt(resumo, PASTA_LOGS_EXECUCAO)

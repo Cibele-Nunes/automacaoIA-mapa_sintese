@@ -1,11 +1,15 @@
 import json
 import time
+import os
 import cv2
-from config import *
+import tempfile
 from google import genai
+from config import *
 from utils.persistencia import carregar_listas_pendentes, salvar_listas_pendentes
 
-client = genai.Client(api_key="SUA_CHAVE")
+from config import carregar_api_key
+
+client = genai.Client(api_key=carregar_api_key())
 
 def juntar_imagens_vertical(lista_caminhos_imagens):
     """
@@ -70,9 +74,10 @@ def extrair_lista_completa(imagens):
         print("❌ Nenhuma imagem válida para envio.")
         return None
 
-    caminho_temp = "temp_envio_ia.jpg"
-    cv2.imwrite(caminho_temp, imagem_unica)
-
+    with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as temp:
+        caminho_temp = temp.name
+        cv2.imwrite(caminho_temp, imagem_unica)
+    
     partes = [{"text": prompt}]
 
     with open(caminho_temp, "rb") as f:
@@ -111,6 +116,10 @@ def extrair_lista_completa(imagens):
                 raise ValueError("IA retornou JSON vazio.")
 
             print("✅ Extração bem-sucedida!")
+
+            if os.path.exists(caminho_temp):
+                os.remove(caminho_temp)
+            
             return dados
 
         except Exception as e:
@@ -130,6 +139,10 @@ def extrair_lista_completa(imagens):
                     continue
                 else:
                     print("❌ Falhou após várias tentativas (503). Pulando lista.")
+
+                    if os.path.exists(caminho_temp):
+                        os.remove(caminho_temp)
+                    
                     return "ERRO_503"
 
             # =================================================
@@ -137,10 +150,16 @@ def extrair_lista_completa(imagens):
             # =================================================
             else:
                 print(f"❌ Erro na extração da lista: {e}")
+
+                if os.path.exists(caminho_temp):
+                    os.remove(caminho_temp)
+
                 return None
             
 def executar_extracao(listas):
     print("Iniciando extração com IA...")
+
+    PASTA_JSON.mkdir(parents=True, exist_ok=True)
 
     #=========================================================
     # LOOP INTELIGENTE
@@ -175,14 +194,14 @@ def executar_extracao(listas):
                 continue
 
             # ✔ sucesso
-            caminho_saida = PASTA_JSON / f"{nome_lista}.json"
+            PASTA_JSON_EXTRAIDO.mkdir(parents=True, exist_ok=True)
+
+            caminho_saida = PASTA_JSON_EXTRAIDO / f"{nome_lista}.json"
 
             with open(caminho_saida, "w", encoding="utf-8") as f:
                 json.dump(resultado, f, ensure_ascii=False, indent=2)
 
-            print("✔ Salvo:", caminho_saida.name)
-
-            listas_para_remover.append(nome_lista)
+                print("✔ Salvo:", caminho_saida.name)
 
         # remove listas concluídas
         for nome in listas_para_remover:
