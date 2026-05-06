@@ -436,7 +436,7 @@ def executar_preenchimento(ano, mes):
     workbook.save(ARQUIVO_ANUAL)
 
     # caso dezembro
-    if MES_ATUAL == "DEZEMBRO":
+    if MES_ATUAL == "12_DEZEMBRO":
 
         ARQUIVO_FINAL = (
             PASTA_RESULTADOS

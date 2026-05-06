@@ -236,7 +236,7 @@ def validar_dados(df):
     if not df_erros.empty:
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        caminho_log = LOGS_VALIDACAO / f"log_validacao_{timestamp}.csv"
+        caminho_log = PASTA_LOGS_VALIDACAO / f"log_validacao_{timestamp}.csv"
 
         df_erros["timestamp_execucao"] = datetime.now().isoformat()
 
@@ -358,7 +358,7 @@ def executar_validacoes(df):
         for e in erros[:10]:
             print(e)
 
-        salvar_log_validacoes_ia(erros, PASTA_LOGS_IA)
+        salvar_log_validacoes_ia(erros, PASTA_LOGS_VALIDACAO)
 
     else:
         print("✅ Nenhuma inconsistência crítica encontrada")

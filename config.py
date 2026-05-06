@@ -28,8 +28,10 @@ PASTA_SISTEMA = PASTA_DADOS / "sistema"
 # subpastas
 PASTA_IMAGENS = Path(PASTA_ENTRADA, ANO, MES)
 PASTA_IMAGENS_PROCESSADAS = Path(PASTA_PROCESSADAS, "imagens_processadas")
+CAMINHO_PENDENTES = PASTA_JSON / "listas_pendentes.json"
 PASTA_JSON_EXTRAIDO = Path(PASTA_JSON, ANO, MES)
-PASTA_LOGS_IA = PASTA_PROCESSADAS, "pasta_logs"
+PASTA_LOGS_VALIDACAO = PASTA_PROCESSADAS / "logs_validacao"
+PASTA_LOGS_VALIDACAO.mkdir(parents=True, exist_ok=True)
 PASTA_LOGS_EXECUCAO = PASTA_RESULTADOS / "logs_execucao"
 PASTA_LOGS_EXECUCAO.mkdir(parents=True, exist_ok=True)
 PASTA_MAPA_ANUAL = PASTA_RESULTADOS / "mapa_sintese_anual"
@@ -56,13 +58,6 @@ def carregar_api_key():
 
     with open(CAMINHO_API_KEY, "r", encoding="utf-8") as f:
         return f.read().strip()
-
-# ===============================
-# ARQUIVO DE PENDENTES
-# ===============================
-CAMINHO_PENDENTES = PASTA_JSON / "listas_pendentes.json"
-LOGS_VALIDACAO = PASTA_PROCESSADAS / "logs_validacao"
-LOGS_EXECUCAO = PASTA_LOGS_EXECUCAO / "logs_execucao"
 
 
 prompt = """

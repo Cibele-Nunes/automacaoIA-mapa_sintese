@@ -159,7 +159,7 @@ def extrair_lista_completa(imagens):
 def executar_extracao(listas):
     print("Iniciando extração com IA...")
 
-    PASTA_JSON.mkdir(parents=True, exist_ok=True)
+    PASTA_JSON_EXTRAIDO.mkdir(parents=True, exist_ok=True)
 
     #=========================================================
     # LOOP INTELIGENTE
@@ -170,11 +170,12 @@ def executar_extracao(listas):
         listas
     )
 
-    tentativa_global = 1
+    MAX_CICLOS = 10
+    ciclo = 1
 
     while listas_pendentes:
 
-        print(f"\n🔁 CICLO {tentativa_global} - Listas restantes: {len(listas_pendentes)}")
+        print(f"\n🔁 CICLO {ciclo}/{MAX_CICLOS} - Listas restantes: {len(listas_pendentes)}")
 
         listas_para_remover = []
 
@@ -201,7 +202,9 @@ def executar_extracao(listas):
             with open(caminho_saida, "w", encoding="utf-8") as f:
                 json.dump(resultado, f, ensure_ascii=False, indent=2)
 
-                print("✔ Salvo:", caminho_saida.name)
+            print("✔ Salvo:", caminho_saida.name)
+
+            listas_para_remover.append(nome_lista)
 
         # remove listas concluídas
         for nome in listas_para_remover:
@@ -210,7 +213,24 @@ def executar_extracao(listas):
         # 💾 salva estado atual
         salvar_listas_pendentes(listas_pendentes, CAMINHO_PENDENTES)
 
-        tentativa_global += 1
+        ciclo += 1
+
+        # =========================================================
+        # CONTROLE DE LIMITE DE CICLOS
+        # =========================================================
+
+        if ciclo > MAX_CICLOS:
+
+            resposta = input(
+                "\n⚠️ Limite de tentativas atingido.\n"
+                "Deseja continuar tentando? (s/n): "
+            ).strip().lower()
+
+        if resposta != "s":
+            print("🛑 Processamento interrompido pelo usuário.")
+            break
+
+        ciclo = 1
 
         # espera antes de novo ciclo (evita sobrecarga)
         if listas_pendentes:

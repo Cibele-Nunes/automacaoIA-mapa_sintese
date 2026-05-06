@@ -20,8 +20,7 @@ def main():
     lista_imagens = list(PASTA_IMAGENS.glob("*"))
 
     imagens_processadas = preprocessar_imagens(
-        lista_imagens,
-        PASTA_PROCESSADAS
+        lista_imagens
     )
 
     # ==========================================================
@@ -45,7 +44,7 @@ def main():
     # ==========================================================
     print("\n📊 Tratamento dos dados...")
 
-    todos_alunos = carregar_todos_alunos(PASTA_JSON)
+    todos_alunos = carregar_todos_alunos(PASTA_JSON_EXTRAIDO)
 
     df_final, erros, erros_mes, caminho_csv = executar_tratamento(
         todos_alunos,
