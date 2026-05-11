@@ -8,12 +8,9 @@ BASE_DIR = Path(__file__).parent
 # ===============================
 # CONFIG GERAIS
 # ===============================
-ANO = "2025"
-MES = "09_SETEMBRO"
-MODO_EXECUCAO = "AJUSTE"
-# NODO_EXECUCAO pode ser "AJUSTE" ou "PRODUCAO"
-# "AJUSTE" → permite rodar mesmo incompleto
-# "PRODUCAO" → bloqueia Excel se incompleto
+ANO = "2026"
+MES = "04_ABRIL"
+
 # ===============================
 # PASTAS
 # ===============================

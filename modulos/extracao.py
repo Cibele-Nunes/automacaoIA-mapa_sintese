@@ -226,11 +226,11 @@ def executar_extracao(listas):
                 "Deseja continuar tentando? (s/n): "
             ).strip().lower()
 
-        if resposta != "s":
-            print("🛑 Processamento interrompido pelo usuário.")
-            break
+            if resposta != "s":
+                print("🛑 Processamento interrompido pelo usuário.")
+                break
 
-        ciclo = 1
+            ciclo = 1
 
         # espera antes de novo ciclo (evita sobrecarga)
         if listas_pendentes:

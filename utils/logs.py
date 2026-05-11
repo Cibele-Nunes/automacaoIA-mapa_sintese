@@ -32,20 +32,17 @@ def carregar_todos_alunos(PASTA_JSON):
 # LOG DE VALIDAÇÃO IA
 # ==========================================================
 
-def salvar_log_validacoes_ia(erros, pasta_logs):
+def salvar_log_validacoes_ia(erros):
 
     if not erros:
         return
-
-    pasta_logs = PASTA_LOGS_IA
-    pasta_logs.mkdir(parents=True, exist_ok=True)
 
     df_erros = pd.DataFrame(erros, columns=["linha", "nome", "descricao"])
 
     df_erros["timestamp_execucao"] = datetime.now().isoformat()
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    arquivo = pasta_logs / f"log_validacao_ia_{timestamp}.csv"
+    arquivo = PASTA_LOGS_VALIDACAO / f"log_validacao_ia_{timestamp}.csv"
 
     df_erros.to_csv(
         arquivo,

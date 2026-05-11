@@ -233,10 +233,12 @@ def preprocessar_e_dividir(caminho_entrada, pasta_saida):
 # EXECUÇÃO - LOOP PRINCIPAL
 # ==========================================================
 
-def preprocessar_imagens(lista_imagens, pasta_saida):
+def preprocessar_imagens(lista_imagens):
     print("Iniciando pré-processamento...")
 
-    pasta_saida = Path(pasta_saida)
+    # pasta automática por ANO/MÊS
+    pasta_saida = PASTA_IMAGENS_PROCESSADAS / ANO / MES
+
     pasta_saida.mkdir(parents=True, exist_ok=True)
 
     lista_processadas = []

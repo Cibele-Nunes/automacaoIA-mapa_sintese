@@ -9,65 +9,71 @@ from utils.logs import carregar_todos_alunos
 
 
 def main():
+    
+    print("\n=== AUTOMAÇÃO MAPA SÍNTESE ===\n")
 
-    print("\n🚀 INICIANDO PROCESSAMENTO COMPLETO\n")
+    print("1 - Processar listas e gerar CSV revisão")
+    print("2 - Preencher Excel com CSV oficial")
 
-    # ==========================================================
-    # 1. PRÉ-PROCESSAMENTO
-    # ==========================================================
-    print("📷 Pré-processamento das imagens...")
+    opcao = input("\nEscolha uma opção: ").strip()
+    if opcao == 1:
 
-    lista_imagens = list(PASTA_IMAGENS.glob("*"))
+        print("\n🚀 INICIANDO PROCESSAMENTO COMPLETO\n")
 
-    imagens_processadas = preprocessar_imagens(
-        lista_imagens
-    )
+        # ==========================================================
+        # 1. PRÉ-PROCESSAMENTO
+        # ==========================================================
+        print("📷 Pré-processamento das imagens...")
 
-    # ==========================================================
-    # 2. AGRUPAMENTO DAS LISTAS
-    # ==========================================================
-    print("\n📑 Agrupando listas...")
+        lista_imagens = list(PASTA_IMAGENS.glob("*"))
 
-    listas = agrupar_listas(imagens_processadas)
+        imagens_processadas = preprocessar_imagens(
+            lista_imagens
+        )
 
-    print(f"Total de listas encontradas: {len(listas)}")
+        # ==========================================================
+        # 2. AGRUPAMENTO DAS LISTAS
+        # ==========================================================
+        print("\n📑 Agrupando listas...")
 
-    # ==========================================================
-    # 3. EXTRAÇÃO COM IA
-    # ==========================================================
-    print("\n🤖 Extração com IA...")
+        listas = agrupar_listas(imagens_processadas)
 
-    executar_extracao(listas)
+        print(f"Total de listas encontradas: {len(listas)}")
 
-    # ==========================================================
-    # 4. TRATAMENTO DOS DADOS
-    # ==========================================================
-    print("\n📊 Tratamento dos dados...")
+        # ==========================================================
+        # 3. EXTRAÇÃO COM IA
+        # ==========================================================
+        print("\n🤖 Extração com IA...")
 
-    todos_alunos = carregar_todos_alunos(PASTA_JSON_EXTRAIDO)
+        executar_extracao(listas)
 
-    df_final, erros, erros_mes, caminho_csv = executar_tratamento(
-        todos_alunos,
-        ANO,
-        MES,
-        PASTA_RESULTADOS
-    )
+        # ==========================================================
+        # 4. TRATAMENTO DOS DADOS
+        # ==========================================================
+        print("\n📊 Tratamento dos dados...")
 
-    print("\nCSV para revisão gerado em:")
-    print(caminho_csv)
+        todos_alunos = carregar_todos_alunos(PASTA_JSON_EXTRAIDO)
 
-    print("\n⚠️ Faça a revisão manual do CSV antes de continuar.")
-    input("Pressione ENTER após revisar o arquivo...")
+        df_final, erros, erros_mes, caminho_csv = executar_tratamento(
+            todos_alunos,
+            ANO,
+            MES,
+            PASTA_RESULTADOS
+        )
 
-    # ==========================================================
-    # 5. PREENCHIMENTO DO EXCEL
-    # ==========================================================
-    print("\n📘 Preenchendo o mapa síntese...")
+        print("\nCSV para revisão gerado em:")
+        print(caminho_csv)
 
-    executar_preenchimento(ANO, MES)
+    elif opcao == "2":
 
-    print("\n✅ PROCESSO FINALIZADO COM SUCESSO!\n")
+        # ==========================================================
+        # 5. PREENCHIMENTO DO EXCEL
+        # ==========================================================
+        print("\n📘 Preenchendo o mapa síntese...")
 
+        executar_preenchimento(ANO, MES)
+
+        print("\n✅ PROCESSO FINALIZADO COM SUCESSO!\n")
 
 # ==========================================================
 # EXECUÇÃO

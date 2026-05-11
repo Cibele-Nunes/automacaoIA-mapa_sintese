@@ -358,7 +358,7 @@ def executar_validacoes(df):
         for e in erros[:10]:
             print(e)
 
-        salvar_log_validacoes_ia(erros, PASTA_LOGS_VALIDACAO)
+        salvar_log_validacoes_ia(erros)
 
     else:
         print("✅ Nenhuma inconsistência crítica encontrada")
