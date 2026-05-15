@@ -10,6 +10,8 @@ from utils.persistencia import carregar_listas_pendentes, salvar_listas_pendente
 from config import carregar_api_key
 
 client = genai.Client(api_key=carregar_api_key())
+if not client:
+    raise ValueError("Falha ao inicializar cliente Gemini.")
 
 def juntar_imagens_vertical(lista_caminhos_imagens):
     """
@@ -34,6 +36,7 @@ def juntar_imagens_vertical(lista_caminhos_imagens):
 
         # segurança: evita erro se imagem não carregar
         if img is None:
+            print(f"⚠️ Não foi possível carregar: {caminho}")
             continue
 
         imagens_cv.append(img)
@@ -110,10 +113,15 @@ def extrair_lista_completa(imagens):
             if texto.startswith("```"):
                 texto = texto.replace("```json", "").replace("```", "").strip()
 
-            dados = json.loads(texto)
+            try:
+                dados = json.loads(texto)
+            except json.JSONDecodeError:
+                print("❌ IA retornou JSON inválido.")
+                return None
 
-            if not dados:
-                raise ValueError("IA retornou JSON vazio.")
+            if not isinstance(dados, list):
+                print("❌ Estrutura JSON inválida.")
+                return None
 
             print("✅ Extração bem-sucedida!")
 

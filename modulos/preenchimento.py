@@ -17,6 +17,29 @@ def carregar_csv_oficial(ano, mes):
 
     df = pd.read_csv(caminho, sep=";", encoding="utf-8-sig")
 
+    if df.empty:
+        raise ValueError(
+            "CSV oficial está vazio."
+        )
+
+    colunas_obrigatorias = [
+        "nome",
+        "area",
+        "etapa",
+        "nota",
+        "data"
+    ]
+
+    faltando = [
+        c for c in colunas_obrigatorias
+        if c not in df.columns
+    ]
+
+    if faltando:
+        raise ValueError(
+            f"CSV oficial sem colunas obrigatórias:\n{faltando}"
+        )
+
     print("✔ CSV oficial carregado:", caminho.name)
 
     return df
@@ -190,6 +213,18 @@ def carregar_arquivo_anual(ano):
     # carrega workbook
     workbook = load_workbook(ARQUIVO_ANUAL)
 
+    sheets_obrigatorias = [
+        "ENSINO FUNDAMENTAL",
+        "ENSINO MÉDIO"
+    ]
+
+    for sheet in sheets_obrigatorias:
+
+        if sheet not in workbook.sheetnames:
+            raise ValueError(
+                f"Sheet obrigatória ausente: {sheet}"
+            )
+
     ws_fundamental = workbook["ENSINO FUNDAMENTAL"]
     ws_medio = workbook["ENSINO MÉDIO"]
 
@@ -245,8 +280,8 @@ def aplicar_mapa_areas(df):
     nao_traduzidas = df[df["area_estrutura"].isna()][["area"]].drop_duplicates()
 
     if len(nao_traduzidas) > 0:
-        print("⚠️ Áreas não reconhecidas:")
-        print(nao_traduzidas)
+        raise ValueError(f"Áreas não reconhecidas:\n{nao_traduzidas}"
+        )
     else:
         print("Todas as áreas reconhecidas pelo modelo!")
 
@@ -367,6 +402,11 @@ def escrever_no_modelo(ws, etapa_nome, resumo):
 
         # escreve cada campo
         for campo in ["INSCRITOS","PRESENTES","AUSENTES","APROVADOS","REPROVADOS"]:
+
+            if turno not in COLUNAS_TURNO:
+                raise ValueError(
+                    f"Turno inválido: {turno}"
+                )
 
             coluna = COLUNAS_TURNO[turno][campo]
             valor = int(linha[campo])

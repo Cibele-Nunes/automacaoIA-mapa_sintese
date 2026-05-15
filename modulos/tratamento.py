@@ -1,7 +1,9 @@
 import re
 import pandas as pd
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
+from config import *
 from utils.logs import *
 
 def normalizar_area(area):
@@ -60,6 +62,10 @@ def pipeline_tratamento(todos_alunos):
     # 1) Criação do DataFrame base
     # ==========================================================
     df = pd.DataFrame(todos_alunos)
+    if df.empty:
+        raise ValueError(
+            "Nenhum registro foi recebido para tratamento."
+        )
 
     # =========================================================
     # NORMALIZAR ÁREA (ANTES DA VALIDAÇÃO)
@@ -74,6 +80,20 @@ def pipeline_tratamento(todos_alunos):
     for col in colunas_esperadas:
         if col not in df.columns:
             df[col] = None
+
+    colunas_criticas = [
+    "nome",
+    "area",
+    "nota",
+    "arquivo_origem"
+]
+
+    for col in colunas_criticas:
+
+        if df[col].isna().all():
+            raise ValueError(
+                f"Coluna crítica vazia: {col}"
+            )
 
     # ==========================================================
     # 2) Extração de TURNO e DATA do nome do arquivo
@@ -379,6 +399,16 @@ def salvar_csv_revisao(df, pasta_resultados, ano, mes):
         sep=";"
     )
 
+    if not caminho.exists():
+        raise FileNotFoundError(
+            "Falha ao gerar CSV de revisão."
+        )
+
+    if caminho.stat().st_size == 0:
+        raise ValueError(
+            "CSV de revisão foi gerado vazio."
+        )
+
     print("📄 CSV gerado:", caminho)
 
     return caminho
@@ -427,9 +457,10 @@ def validar_mes_completo(df, mes):
 
 def executar_tratamento(todos_alunos, ano, mes, pasta_resultados):
 
-    inicio_execucao = datetime.now()
-
+    inicio_execucao = datetime.now(ZoneInfo("America/Bahia"))
+    
     total_brutos = len(todos_alunos)
+    total_jsons = len(list(PASTA_JSON_EXTRAIDO.glob("*.json")))
 
     df = pipeline_tratamento(todos_alunos)
     df = validar_dados(df)
@@ -444,20 +475,31 @@ def executar_tratamento(todos_alunos, ano, mes, pasta_resultados):
 
     caminho_csv = salvar_csv_revisao(df, pasta_resultados, ano, mes)
 
-    fim_execucao = datetime.now()
+    fim_execucao = datetime.now(ZoneInfo("America/Bahia"))
     tempo_execucao = (fim_execucao - inicio_execucao).total_seconds()
 
+    inicio_formatado = inicio_execucao.strftime("%d/%m/%Y %H:%M:%S")
+    fim_formatado = fim_execucao.strftime("%d/%m/%Y %H:%M:%S")
+
     info_execucao = {
-        "ano": ano,
-        "mes": mes,
-        "total_registros_brutos": total_brutos,
-        "total_registros_final": total_final,
-        "total_erros_validacao_ia": total_erros,
-        "tempo_execucao_segundos": tempo_execucao,
-        "inicio_execucao": inicio_execucao.isoformat(),
-        "fim_execucao": fim_execucao.isoformat(),
-        "status": "SUCESSO" if total_erros == 0 else "COM_ALERTAS"
-    }
+    "ano": ANO,
+    "mes": MES,
+    "total_arquivos_json": total_jsons,
+    "total_registros_brutos": total_brutos,
+    "total_registros_final": total_final,
+    "total_erros_validacao_ia": total_erros,
+    "tempo_execucao_segundos": tempo_execucao,
+
+    # formato amigável
+    "inicio_execucao_formatado": inicio_formatado,
+    "fim_execucao_formatado": fim_formatado,
+
+    # formato técnico ISO
+    "inicio_execucao_iso": inicio_execucao.isoformat(),
+    "fim_execucao_iso": fim_execucao.isoformat(),
+
+    "status": "SUCESSO" if total_erros == 0 else "COM_ALERTAS"
+}
 
     salvar_log_execucao(info_execucao, PASTA_LOGS_EXECUCAO)
 

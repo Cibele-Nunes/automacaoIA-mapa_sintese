@@ -2,6 +2,7 @@ from config import *
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import json
 
 
@@ -26,7 +27,6 @@ def carregar_todos_alunos(PASTA_JSON):
     print("Total de registros carregados:", len(todos_alunos))
 
     return todos_alunos
-
 
 # ==========================================================
 # LOG DE VALIDAÇÃO IA
@@ -63,7 +63,7 @@ def salvar_log_execucao(info_execucao, caminho_logs):
     caminho_logs = Path(PASTA_LOGS_EXECUCAO / "logs_execucao")
     caminho_logs.mkdir(parents=True, exist_ok=True)
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now(ZoneInfo("America/Bahia")).strftime("%Y%m%d_%H%M%S")
 
     arquivo = caminho_logs / f"log_execucao_{timestamp}.json"
 
@@ -71,6 +71,7 @@ def salvar_log_execucao(info_execucao, caminho_logs):
         json.dump(info_execucao, f, ensure_ascii=False, indent=2)
 
     print("📊 Log de execução salvo em:", arquivo)
+
 
 
 # ==========================================================
@@ -109,7 +110,7 @@ def salvar_resumo_txt(resumo, caminho_logs):
     caminho_logs = Path(PASTA_LOGS_EXECUCAO / "logs_execucao")
     caminho_logs.mkdir(parents=True, exist_ok=True)
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now(ZoneInfo("America/Bahia")).strftime("%Y%m%d_%H%M%S")
 
     arquivo = caminho_logs / f"resumo_execucao_{timestamp}.txt"
 

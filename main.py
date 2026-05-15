@@ -4,7 +4,7 @@ from modulos.preprocessamento import preprocessar_imagens, agrupar_listas
 from modulos.extracao import executar_extracao
 from modulos.tratamento import executar_tratamento
 from modulos.preenchimento import executar_preenchimento
-
+from utils.validacoes import validar_api_key
 from utils.logs import carregar_todos_alunos
 
 
@@ -44,6 +44,8 @@ def main():
         # 3. EXTRAÇÃO COM IA
         # ==========================================================
         print("\n🤖 Extração com IA...")
+
+        validar_api_key()
 
         executar_extracao(listas)
 

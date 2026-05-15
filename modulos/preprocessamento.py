@@ -240,6 +240,11 @@ def preprocessar_imagens(lista_imagens):
     pasta_saida = PASTA_IMAGENS_PROCESSADAS / ANO / MES
 
     pasta_saida.mkdir(parents=True, exist_ok=True)
+    
+    if not os.access(pasta_saida, os.W_OK):
+        raise PermissionError(
+            f"Sem permissão de escrita em:\n{pasta_saida}"
+    )
 
     lista_processadas = []
 
