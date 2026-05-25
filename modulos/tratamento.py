@@ -1,4 +1,5 @@
 import re
+import json
 import pandas as pd
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -56,6 +57,60 @@ def normalizar_etapa(etapa):
     # fallback (caso estranho)
     # ===============================
     return etapa
+
+def carregar_jsons_extraidos(ano, mes):
+
+    pasta_json = (
+        PASTA_JSON_EXTRAIDO_BASE / ano / mes
+    )
+
+    if not pasta_json.exists():
+
+        raise FileNotFoundError(
+            f"Pasta JSON não encontrada:\n{pasta_json}"
+        )
+
+    arquivos_json = sorted(
+        pasta_json.glob("*.json")
+    )
+
+    if not arquivos_json:
+
+        raise ValueError(
+            "Nenhum JSON encontrado para tratamento."
+        )
+
+    todos_alunos = []
+
+    for arquivo in arquivos_json:
+
+        with open(
+            arquivo,
+            "r",
+            encoding="utf-8"
+        ) as f:
+
+            dados = json.load(f)
+
+            # aceita lista direta
+            if isinstance(dados, list):
+                todos_alunos.extend(dados)
+
+            # aceita {"alunos": [...]}
+            elif (
+                isinstance(dados, dict)
+                and "alunos" in dados
+            ):
+                todos_alunos.extend(
+                    dados["alunos"]
+                )
+
+    print(
+        f"📥 Total de registros carregados: "
+        f"{len(todos_alunos)}"
+    )
+
+    return todos_alunos
 
 def pipeline_tratamento(todos_alunos):
     # ==========================================================
@@ -177,8 +232,10 @@ def pipeline_tratamento(todos_alunos):
         return "APROVADO"
       return "REPROVADO"
 
-    df["resultado"] = "REPROVADO"
-    df.loc[(df["presenca"] == "PRESENTE") & (df["nota"] >= 5.0), "resultado"] = "APROVADO"
+    df["resultado"] = df.apply(
+    calcular_resultado,
+    axis=1
+)
 
     # ==========================================================
     # 7) Criação da chave única do aluno na prova
@@ -460,7 +517,8 @@ def executar_tratamento(todos_alunos, ano, mes, pasta_resultados):
     inicio_execucao = datetime.now(ZoneInfo("America/Bahia"))
     
     total_brutos = len(todos_alunos)
-    total_jsons = len(list(PASTA_JSON_EXTRAIDO.glob("*.json")))
+    pasta_json = (PASTA_JSON_EXTRAIDO_BASE / ano / mes)
+    total_jsons = len(list(pasta_json.glob("*.json")))
 
     df = pipeline_tratamento(todos_alunos)
     df = validar_dados(df)
@@ -482,8 +540,8 @@ def executar_tratamento(todos_alunos, ano, mes, pasta_resultados):
     fim_formatado = fim_execucao.strftime("%d/%m/%Y %H:%M:%S")
 
     info_execucao = {
-    "ano": ANO,
-    "mes": MES,
+    "ano": ano,
+    "mes": mes,
     "total_arquivos_json": total_jsons,
     "total_registros_brutos": total_brutos,
     "total_registros_final": total_final,

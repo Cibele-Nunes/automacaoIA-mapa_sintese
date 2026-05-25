@@ -17,24 +17,26 @@ from config import *
 # Não usa mais upload manual
 # Funciona para qualquer funcionário
 
-def organizacao_arquivos():
+def organizacao_arquivos(ano, mes):
     """
     Lê imagens da pasta e valida entrada
     """
 
+    pasta_imagens = (PASTA_IMAGENS_BASE / ano / mes)    
+    
     print("Selecionando período para processamento...")
 
-    if not os.path.exists(PASTA_IMAGENS):
-        raise FileNotFoundError(f"Pasta não encontrada: {PASTA_IMAGENS}")
+    if not os.path.exists(pasta_imagens):
+        raise FileNotFoundError(f"Pasta não encontrada: {pasta_imagens}")
 
     lista_imagens = [
-        os.path.join(PASTA_IMAGENS, f)
-        for f in os.listdir(PASTA_IMAGENS)
+        os.path.join(pasta_imagens, f)
+        for f in os.listdir(pasta_imagens)
         if f.lower().endswith((".jpg", ".jpeg", ".png"))
     ]
 
-    print("Ano selecionado:", ANO)
-    print("Mês selecionado:", MES)
+    print("Ano selecionado:", ano)
+    print("Mês selecionado:", mes)
     print("Total de imagens encontradas:", len(lista_imagens))
 
     if not lista_imagens:
@@ -233,11 +235,11 @@ def preprocessar_e_dividir(caminho_entrada, pasta_saida):
 # EXECUÇÃO - LOOP PRINCIPAL
 # ==========================================================
 
-def preprocessar_imagens(lista_imagens):
+def preprocessar_imagens(lista_imagens, ano, mes):
     print("Iniciando pré-processamento...")
 
     # pasta automática por ANO/MÊS
-    pasta_saida = PASTA_IMAGENS_PROCESSADAS / ANO / MES
+    pasta_saida = (PASTA_IMAGENS_PROCESSADAS_BASE / ano / mes)
 
     pasta_saida.mkdir(parents=True, exist_ok=True)
     
@@ -256,6 +258,7 @@ def preprocessar_imagens(lista_imagens):
 
         if arquivos_existentes:
             print(f"⏭️ Já processado: {nome_base}")
+            lista_processadas.extend(arquivos_existentes)
             continue
 
         novas = preprocessar_e_dividir(
@@ -283,5 +286,10 @@ def agrupar_listas(imagens_processadas):
         nome = Path(img).stem.lower()
         chave = "_".join(nome.split("_")[:2])
         listas[chave].append(img)
+
+    print("\n📚 RESUMO DO AGRUPAMENTO\n")
+
+    for nome, imgs in listas.items():
+        print(f"{nome} → {len(imgs)} imagens")
 
     return listas

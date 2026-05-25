@@ -113,12 +113,30 @@ def extrair_lista_completa(imagens):
             if texto.startswith("```"):
                 texto = texto.replace("```json", "").replace("```", "").strip()
 
+            print("\n========== RESPOSTA IA ==========\n")
+            print(texto)
+            print("\n================================\n")
+
             try:
                 dados = json.loads(texto)
+                
             except json.JSONDecodeError:
                 print("❌ IA retornou JSON inválido.")
                 return None
 
+            # =====================================================
+            # NORMALIZA ESTRUTURA JSON
+            # =====================================================
+            
+            if isinstance(dados, dict):
+                
+                if "alunos" in dados:
+                    dados = dados["alunos"]
+
+                else:
+                    print("❌ Estrutura JSON inválida.")
+                    return None
+                
             if not isinstance(dados, list):
                 print("❌ Estrutura JSON inválida.")
                 return None
@@ -164,10 +182,10 @@ def extrair_lista_completa(imagens):
 
                 return None
             
-def executar_extracao(listas):
+def executar_extracao(listas, ano, mes):
     print("Iniciando extração com IA...")
 
-    PASTA_JSON_EXTRAIDO.mkdir(parents=True, exist_ok=True)
+    pasta_json = (PASTA_JSON_EXTRAIDO_BASE / ano / mes)
 
     #=========================================================
     # LOOP INTELIGENTE
@@ -202,10 +220,20 @@ def executar_extracao(listas):
                 listas_para_remover.append(nome_lista)
                 continue
 
-            # ✔ sucesso
-            PASTA_JSON_EXTRAIDO.mkdir(parents=True, exist_ok=True)
+            # =====================================================
+            # ADICIONA ARQUIVO_ORIGEM
+            # =====================================================
 
-            caminho_saida = PASTA_JSON_EXTRAIDO / f"{nome_lista}.json"
+            for aluno in resultado:
+
+                aluno["arquivo_origem"] = (
+                    f"{nome_lista}.json"
+                )
+
+            # ✔ sucesso
+            pasta_json.mkdir(parents=True, exist_ok=True)
+
+            caminho_saida = pasta_json / f"{nome_lista}.json"
 
             with open(caminho_saida, "w", encoding="utf-8") as f:
                 json.dump(resultado, f, ensure_ascii=False, indent=2)
