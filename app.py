@@ -15,6 +15,9 @@ from modulos.tratamento import (
 )
 
 from config import PASTA_RESULTADOS
+from modulos.preenchimento import (
+    executar_preenchimento
+)
 
 # =========================================================
 # CONFIGURAÇÃO DA PÁGINA
@@ -140,6 +143,20 @@ if st.button("Executar"):
 
             st.write("📄 CSV gerado:")
             st.write(str(caminho_csv))
+
+        except Exception as e:
+
+            st.error(f"❌ Erro:\n{e}")
+
+    if modo == "Preencher Excel":
+
+        try:
+
+            st.write("📄 Iniciando preenchimento do Excel...")
+
+            executar_preenchimento(ano, mes)
+
+            st.success("✅ Preenchimento concluído com sucesso!")
 
         except Exception as e:
 

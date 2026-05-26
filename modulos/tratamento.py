@@ -549,8 +549,8 @@ def executar_tratamento(todos_alunos, ano, mes, pasta_resultados):
     "tempo_execucao_segundos": tempo_execucao,
 
     # formato amigável
-    "inicio_execucao_formatado": inicio_formatado,
-    "fim_execucao_formatado": fim_formatado,
+    "inicio_execucao": inicio_formatado,
+    "fim_execucao": fim_formatado,
 
     # formato técnico ISO
     "inicio_execucao_iso": inicio_execucao.isoformat(),

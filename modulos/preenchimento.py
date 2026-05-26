@@ -445,7 +445,6 @@ def verificar_mes_preenchido(ws, mes):
     return False
 
 def executar_preenchimento(ano, mes):
-
     df = carregar_csv_oficial(ano, mes)
 
     df = preparar_dados(df)
@@ -476,12 +475,12 @@ def executar_preenchimento(ano, mes):
     workbook.save(ARQUIVO_ANUAL)
 
     # caso dezembro
-    if MES_ATUAL == "12_DEZEMBRO":
+    if MES_ATUAL == "DEZEMBRO":
 
         ARQUIVO_FINAL = (
             PASTA_RESULTADOS
             / "arquivo_final"
-            / f"SALVADOR - ROBERTO SANTOS - MAPA SINTESE POR UC MARÇO A DEZEMBRO {ANO}.xlsx"
+            / f"SALVADOR - ROBERTO SANTOS - MAPA SINTESE POR UC MARÇO A DEZEMBRO {ano}.xlsx"
     )
 
         ARQUIVO_FINAL.parent.mkdir(parents=True, exist_ok=True)
