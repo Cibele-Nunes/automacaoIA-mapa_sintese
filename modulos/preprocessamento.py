@@ -235,7 +235,7 @@ def preprocessar_e_dividir(caminho_entrada, pasta_saida):
 # EXECUÇÃO - LOOP PRINCIPAL
 # ==========================================================
 
-def preprocessar_imagens(lista_imagens, ano, mes):
+def preprocessar_imagens(lista_imagens, ano, mes, progress_bar=None):
     print("Iniciando pré-processamento...")
 
     # pasta automática por ANO/MÊS
@@ -250,7 +250,12 @@ def preprocessar_imagens(lista_imagens, ano, mes):
 
     lista_processadas = []
 
-    for caminho_origem in sorted(lista_imagens):
+    total = len(lista_imagens)
+
+    for i, caminho_origem in enumerate(
+        sorted(lista_imagens),
+        start=1
+    ):
 
         nome_base = Path(caminho_origem).stem
 
@@ -267,6 +272,11 @@ def preprocessar_imagens(lista_imagens, ano, mes):
         )
 
         lista_processadas.extend(novas)
+
+        if progress_bar:
+            progresso = int((i / total) * 100)
+
+            progress_bar.progress(progresso)
 
     print("Total de imagens finais:", len(lista_processadas))
     print("Pré-processamento finalizado.")

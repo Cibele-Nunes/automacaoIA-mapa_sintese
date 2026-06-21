@@ -60,9 +60,8 @@ def salvar_log_validacoes_ia(erros):
 
 def salvar_log_execucao(info_execucao, caminho_logs):
 
-    caminho_logs = Path(PASTA_LOGS_EXECUCAO / "logs_execucao")
-    caminho_logs.mkdir(parents=True, exist_ok=True)
-
+    caminho_logs = Path(PASTA_LOGS_EXECUCAO / f"log_execucao_{timestamp}.csv")
+    
     timestamp = datetime.now(ZoneInfo("America/Bahia")).strftime("%Y%m%d_%H%M%S")
 
     arquivo = caminho_logs / f"log_execucao_{timestamp}.json"
@@ -107,7 +106,7 @@ Status: {"âœ… SUCESSO" if info_execucao['total_erros_validacao_ia'] == 0 else "â
 
 def salvar_resumo_txt(resumo, caminho_logs):
 
-    caminho_logs = Path(PASTA_LOGS_EXECUCAO / "logs_execucao")
+    caminho_logs = Path(PASTA_LOGS_EXECUCAO / f"resumo_{timestamp}.csv")
     caminho_logs.mkdir(parents=True, exist_ok=True)
 
     timestamp = datetime.now(ZoneInfo("America/Bahia")).strftime("%Y%m%d_%H%M%S")

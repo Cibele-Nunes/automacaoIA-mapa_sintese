@@ -83,12 +83,12 @@ Sua função é transcrever a tabela exatamente como ela aparece, sem qualquer i
 4.	Dados Ausentes: Se uma célula estiver em branco, use null ou "" (string vazia) no JSON. Nunca invente valores para "completar" o objeto.
 5.	Sem Reorganização: Mantenha a ordem dos dados conforme aparecem visualmente na imagem.
 
-========================================
+==============================================
 ALERTA CRÍTICO: PROCESSAMENTO DE ÁREAS DUPLAS
-========================================
-As áreas “LINGUAGENS E SUAS TECNOLOGIAS” e “REDAÇÃO” aparecem na mesma lista.
-•	Listas com duas áreas: Trate cada área como listas diferentes. Será lista de “LINGUAGENS E SUAS TECNOLOGIAS” e lista de “REDAÇÃO”.
-•	Duplicidade Esperada: É comum encontrar o mesmo aluno em duas linhas consecutivas: uma para "LINGUAGENS E SUAS TECNOLOGIAS" e outra para "REDAÇÃO".
+==============================================
+As áreas “LINGUAGENS E SUAS TECNOLOGIAS” e “REDAÇÃO” ocupam a mesma lista. 
+•	Listas com duas áreas diferentes na mesma coluna: Trate cada área separadamente, como listas diferentes. Será lista de “LINGUAGENS E SUAS TECNOLOGIAS” e lista de “REDAÇÃO”.
+•	Duplicidade Esperada: Na lista, pode haver duplicidade do nome e isso é para ser assim mesmo. É COMUM ENCONTRAR NOME DUPLICADO. A duplicidade de nome não é um erro e deve ser tratada como mais um dado diferente. É PROIBIDO DEDUPLICAR.
 •	Independência de Notas: As notas de "LINGUAGENS E SUAS TECNOLOGIAS" e "REDAÇÃO" são independentes. É terminantemente proibido copiar a nota de uma linha para a outra.
 •	Isolamento de Linha: Processe cada linha de forma independente. Ignore o conteúdo das linhas adjacentes ao extrair os valores de uma célula.
 •	Conferência Visual: Transcreva apenas o valor numérico que está fisicamente alinhado à área correspondente na imagem.
@@ -126,9 +126,6 @@ Antes de extrair os dados:
    - O nome, a área, a etapa e a nota devem estar na MESMA LINHA HORIZONTAL.
 3. Nunca associe uma nota que esteja em uma linha diferente do nome.
 4. Nunca associe uma área que esteja em uma linha diferente do nome.
-5. Se houver dúvida sobre alinhamento:
-   - DESCARTE a linha
-   - NÃO tente corrigir
 
 CRÍTICO:
 A coluna "Área" está localizada aproximadamente no centro horizontal da tabela.
@@ -198,9 +195,9 @@ REGRAS DE NOTA E RESULTADO
 3. Média de aprovação = 5.0:
    - Nota >= 5.0 → APROVADO
    - Nota < 5.0 → REPROVADO
-4. Se AUSENTE → resultado = REPROVADO
+4. Se AUSENTE → resultado = " "
 5. Se nota = SR → tratar como 0.0 → REPROVADO
-6. Se nota ilegível, mas visivelmente numérica:
+6. Se nota ilegível, mas visivelmente numérica: 
    → resultado = "NOTA_ILEGIVEL"
 7. Nunca inventar nota
 8. Nunca modificar etapa

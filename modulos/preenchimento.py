@@ -73,10 +73,14 @@ def preparar_dados(df):
 
     # resultado oficial
     df["resultado"] = df.apply(
-        lambda r: "REPROVADO" if r["presenca"]=="AUSENTE"
-        else ("APROVADO" if r["nota"]>=5 else "REPROVADO"),
+        lambda r: " " 
+            if r["presenca"] == "AUSENTE"
+            else ("APROVADO"
+                if r["nota"] >= 5
+                else "REPROVADO"
+            ),
         axis=1
-    )
+)
 
     return df
 
@@ -132,7 +136,7 @@ def validar_csv_oficial(df):
         erros.append(f"Há {len(erro_nota_ausente)} alunos AUSENTES com nota.")
 
     # 2) Resultado inválido
-    valores_validos = ["APROVADO", "REPROVADO"]
+    valores_validos = ["APROVADO", "REPROVADO", " "]
     erro_resultado = df[
         ~df["resultado"].isin(valores_validos)
     ]
@@ -414,8 +418,8 @@ def escrever_no_modelo(ws, etapa_nome, resumo):
             ws[f"{coluna}{linha_excel}"] = valor
 
     print("Planilha preenchida:", etapa_nome)
-    print(f"\n🔎 Etapa: {etapa_nome}")
-    print("Linhas encontradas:", len(df_etapa))
+    print(f"🔎 Etapa: {etapa_nome}")
+    print("Linhas encontradas:", len(df_etapa), "\n")
 
 def verificar_mes_preenchido(ws, mes):
     """
@@ -473,6 +477,10 @@ def executar_preenchimento(ano, mes):
     escrever_no_modelo(ws_medio, "ENSINO MÉDIO", resumo)
 
     workbook.save(ARQUIVO_ANUAL)
+
+    print("Arquivo anual atualizado com sucesso!")
+
+    return ARQUIVO_ANUAL
 
     # caso dezembro
     if MES_ATUAL == "DEZEMBRO":

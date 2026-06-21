@@ -182,7 +182,7 @@ def extrair_lista_completa(imagens):
 
                 return None
             
-def executar_extracao(listas, ano, mes):
+def executar_extracao(listas, ano, mes, progress_bar=None):
     print("Iniciando extração com IA...")
 
     pasta_json = (PASTA_JSON_EXTRAIDO_BASE / ano / mes)
@@ -205,7 +205,12 @@ def executar_extracao(listas, ano, mes):
 
         listas_para_remover = []
 
-        for nome_lista, imagens in listas_pendentes.items():
+        total_listas = len(listas_pendentes)
+
+        for i, (nome_lista, imagens) in enumerate(
+            listas_pendentes.items(),
+            start=1
+        ):
 
             print(f"\n📄 Processando: {nome_lista}")
 
@@ -239,6 +244,13 @@ def executar_extracao(listas, ano, mes):
                 json.dump(resultado, f, ensure_ascii=False, indent=2)
 
             print("✔ Salvo:", caminho_saida.name)
+
+            if progress_bar:
+                progresso = int(
+                    (i / total_listas) * 100
+                )
+
+                progress_bar.progress(progresso)
 
             listas_para_remover.append(nome_lista)
 

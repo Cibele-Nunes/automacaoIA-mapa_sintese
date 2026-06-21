@@ -227,7 +227,7 @@ def pipeline_tratamento(todos_alunos):
     # ==========================================================
     def calcular_resultado(row):
       if row["presenca"] == "AUSENTE":
-        return "REPROVADO"
+        return " "
       if row["nota"] >= 5.0:
         return "APROVADO"
       return "REPROVADO"
