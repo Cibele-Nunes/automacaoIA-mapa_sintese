@@ -26,28 +26,91 @@ from modulos.preenchimento import (
 # =========================================================
 
 st.set_page_config(
-    page_title="Automação Mapa Síntese",
+    page_title="Automação do Mapa Síntese",
     layout="wide"
 )
 
-# =========================================================
-# TÍTULO
-# =========================================================
+st.markdown(
+    """
+    <h1 style='font-size:48px;'>
+    📊 Automação do Mapa Síntese
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 
-st.title("📊 Automação Mapa Síntese")
+st.markdown(
+    """
+    <style>
+
+    h1 {
+    font-size: 3rem !important;
+    }
+
+    p {
+        font-size: 1.4rem !important;
+    }
+
+    div[data-testid="stRadio"] label {
+        font-size: 1.1rem !important;
+    }
+
+    div[data-testid="stFileUploader"] label {
+        font-size: 1.05rem !important;
+    }
+
+    button {
+        font-size: 1.1rem !important;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+
+    div[role="radiogroup"] label {
+        margin-bottom: 15px !important;
+        margin-top: 12px !important;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
 
 st.write(
     """
-Sistema de processamento automático das listas
-do Colégio Estadual Roberto Santos.
-"""
-)
+    Sistema de processamento automático 
+    e elaboração do MAPA SÍNTESE da CPA do 
+    Colégio Estadual de Tempo Integral 
+    Governador Roberto Santos.
+    """
+    )
 
 # =========================================================
 # MENU
 # =========================================================
 
-modo = st.radio(
+col1, col2, col3 = st.sidebar.columns([1, 2, 1])
+
+with col2:
+    st.image(
+        "assets/logo.png",
+        width=180
+        )
+    
+st.sidebar.markdown(
+    "<h4 style='text-align:center;'>Automação do Mapa Síntese</h4>",
+    unsafe_allow_html=True
+)
+
+st.sidebar.divider()
+
+modo = st.sidebar.radio(
     "Selecione uma operação:",
     [
         "Processar listas",
@@ -55,35 +118,61 @@ modo = st.radio(
     ]
 )
 
+st.sidebar.divider()
+
 # =========================================================
 # CAMPOS
 # =========================================================
 
-ano = st.selectbox(
-    "Ano",
-    ["2026", 
-     "2025"]
-)
+st.sidebar.write("Selecione o período:")
 
-mes = st.selectbox(
-    "Mês",
-    [
-        "03_MARÇO",
-        "04_ABRIL",
-        "05_MAIO",
-        "06_JUNHO",
-        "07_JULHO",
-        "08_AGOSTO",
-        "09_SETEMBRO",
-        "10_OUTUBRO",
-        "11_NOVEMBRO",
-        "12_DEZEMBRO"
-    ]
-)
+ano = st.sidebar.selectbox(
+        "Ano",
+        ["2026", "2025"]
+    )
+
+mes = st.sidebar.selectbox(
+        "Mês",
+        [
+            "03_MARÇO",
+            "04_ABRIL",
+            "05_MAIO",
+            "06_JUNHO",
+            "07_JULHO",
+            "08_AGOSTO",
+            "09_SETEMBRO",
+            "10_OUTUBRO",
+            "11_NOVEMBRO",
+            "12_DEZEMBRO"
+        ]
+    )
+
+mes_exibicao = mes.split("_", 1)[1]
+
+st.info(
+    f"📅 Período selecionado: {mes_exibicao} de {ano}")
+
+st.divider()
 
 uploaded_files = None
 
 if modo == "Processar listas":
+
+    st.header("📂 Processamento de Listas")
+
+    st.info(
+        """
+        Envie as imagens das listas.
+
+        **O sistema irá:**
+        - Pré-processar
+        - Extrair com IA
+        - Gerar CSV para revisão
+        """
+    )
+
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.divider()
 
     uploaded_files = st.file_uploader(
         "Imagens das listas selecionadas",
@@ -94,6 +183,22 @@ if modo == "Processar listas":
 csv_oficial_upload = None
 
 if modo == "Preencher Excel":
+
+    st.header("📊 Preenchimento do Mapa Síntese")
+
+    st.info(
+        """
+        Envie o CSV oficial revisado.
+
+        **O sistema irá:**
+        - Validar os dados
+        - Atualizar o Excel anual
+        - Gerar o mapa síntese atualizado
+        """
+    )
+
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.divider()
 
     csv_oficial_upload = st.file_uploader(
         "CSV Oficial Revisado",
@@ -108,6 +213,8 @@ if modo == "Preencher Excel":
 if st.button("Executar"):
 
     status = st.empty()
+
+    st.subheader("📋 Log de Execução")
 
     log_box = st.empty()
 
@@ -273,6 +380,27 @@ if st.button("Executar"):
             status.info(str(caminho_csv))
 
             logs.append(f"📄 CSV gerado com sucesso em: {str(caminho_csv)}")
+            
+            log_box.code("\n".join(logs))
+
+            logs.append(f"""
+                        📊 RESUMO
+
+                        Período: {mes_exibicao} de {ano}
+                        Imagens encontradas: {len(lista_imagens)}
+                        Listas agrupadas: {len(listas)}
+                        Registros: {len(todos_alunos)}
+                        Registros processados: {len(df_final)}
+                        Inconsistências: {len(erros)}
+
+                        CSV gerado: {Path(caminho_csv).name}
+                        """)
+            
+            log_box.code(
+                "\n".join(logs)
+            )
+
+            logs.append("✅ Processamento concluído")
             
             log_box.code("\n".join(logs))
 
