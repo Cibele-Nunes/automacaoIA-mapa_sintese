@@ -301,3 +301,5 @@ OFFSET_AREAS = {
     "MATEMÁTICA": 6,
     "CIÊNCIAS": 7
 }
+
+NOME_INSTITUICAO_PADRAO = "Instituição não configurada"

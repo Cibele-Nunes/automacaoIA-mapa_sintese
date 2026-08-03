@@ -1,0 +1,578 @@
+[
+  {
+    "nome": "ADILSON DA SILVA DE JESUS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "ALBERT DE ALCÂNTARA OLIVEIRA",
+    "area": "REDAÇÃO",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "ALBERT DE ALCÂNTARA OLIVEIRA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "ANA JULIA DE JESUS SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "ANA JULIA DE JESUS SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "ANGELO GABRIEL COUTO DE JESUS SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 2.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "BEATRIZ GOMES DE ARAÚJO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 7.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "CARLOS VITOR DE JESUS FERREIRA",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "CARLOS VITOR DE JESUS FERREIRA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "CECILIA MARIA FERNANDES BRANCO PEREIRA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 8.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "CECILIA MARIA FERNANDES BRANCO PEREIRA",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 3.5,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "CIBELE VITÓRIA SANTOS SANTIAGO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "CIBELE VITÓRIA SANTOS SANTIAGO",
+    "area": "REDAÇÃO",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "DIEGO SILVA MOREIRA DOS SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "EMANUEL CARDOSO SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "EVELYN HELENA SANTOS FIGUEIREDO",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "FABRÍCIO TELES DOS SANTOS BURI",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 3.5,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "GABRIEL SANTOS PASSOS",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 2.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "GABRIEL VINICIUS RENAN ALVES DA SILVA",
+    "area": "REDAÇÃO",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "GABRIEL VINICIUS RENAN ALVES DA SILVA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "GUILHERME JESUS DOS SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 9.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "GUILHERME JESUS DOS SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 7.5,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "GUSTAVO CÂNDIDO CALDAS",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "HERBERT DE ALMEIDA ALVES SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "JEORGENES SOARES BOMFIM BANDEIRA",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "JOHAN KENEDY SOUZA PEREIRA",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "JOHAN KENEDY SOUZA PEREIRA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "JONES AVELINO DE JESUS",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "JONES AVELINO DE JESUS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "JOSIAS CALHEIRO DE JESUS MARIANO",
+    "area": "REDAÇÃO",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "KAUÃ VITOR PEREIRA CARDOSO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "KAUÃ VITOR PEREIRA CARDOSO",
+    "area": "REDAÇÃO",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "LEILA FERREIRA DO NASCIMENTO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "LORENA FRANÇA NASCIMENTO",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 1.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "LORENA FRANÇA NASCIMENTO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 5.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "LUCAS HENRIQUE ANTONIO ALEXANDRE",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "LUCAS HENRIQUE ANTONIO ALEXANDRE",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "NATAN PEDRO VIEIRA MONTEIRO",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "PAULO ROBERT ARAÚJO DAS NEVES",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "PAULO ROBERT ARAÚJO DAS NEVES",
+    "area": "REDAÇÃO",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "RAFAEL SALUME NOSSA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 7.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "RAFAEL SALUME NOSSA",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "RONALDO SIMÕES FORTE",
+    "area": "REDAÇÃO",
+    "etapa": "FUNDAMENTAL",
+    "nota": 3.5,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "ROSÁLIA SILVA DE ALMEIDA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "MAILON DE SA SILVA DOS SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "MARCOS VINICIO PINHO DE SOUZA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "MARCOS VINICIO PINHO DE SOUZA",
+    "area": "REDAÇÃO",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "MARIA CLARA MIRANDA BISPO DOS SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "MATHEUS SOARES DE SOUZA",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 0.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "MATHEUS SOARES DE SOUZA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 8.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "MIRELA SANTOS DA SILVA",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "MIRELA SANTOS DA SILVA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "ROSÁLIA SILVA DE ALMEIDA",
+    "area": "REDAÇÃO",
+    "etapa": "FUNDAMENTAL",
+    "nota": 3.5,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "VERONICA GARCEZ TENÓRIO SANTOS CAVALCANTE",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 0.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "VERONICA GARCEZ TENÓRIO SANTOS CAVALCANTE",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 5.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "VICTORIA KRISHNA BERNARDINO CAVALCANTI",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "VICTORIA KRISHNA BERNARDINO CAVALCANTI",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 7.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "VICTORIA SANTOS BITENCOURT",
+    "area": "REDAÇÃO",
+    "etapa": "FUNDAMENTAL",
+    "nota": 6.5,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "VICTORIA SANTOS BITENCOURT",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": 7.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "VINICIUS NASCIMENTO BISPO",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "VIVIANO RODRIGUES DA COSTA NETO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 6.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "VIVIANO RODRIGUES DA COSTA NETO",
+    "area": "REDAÇÃO",
+    "etapa": "MÉDIO",
+    "nota": 9.5,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "WENDEL CRUZ CALMON",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  },
+  {
+    "nome": "YAN LUCAS ANDRADE DANTAS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-07-20.json"
+  }
+]
