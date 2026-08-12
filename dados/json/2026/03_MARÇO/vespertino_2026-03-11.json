@@ -1,0 +1,137 @@
+[
+  {
+    "nome": "ALESSANDRA MALTA ALVES",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 3.3,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "CAIO NEVES LIMA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "DANILO XAVIER COSTA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "DOUGLAS TELLES CARVALHO",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "HENRIQUE LINS RIBEIRO",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "IGOR CAMARGO SILVA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 2.7,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "JÉSSICA VALENTE RODRIGUES",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": 10.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "MONIQUE PIRES MELO",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "NICOLE MEIRELES VIEIRA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "OTÁVIO MARINHO MACHADO",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 5.1,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "PRISCILA JUNQUEIRA ALMEIDA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": 6.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "REBECA FRANCO SANTOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": 7.4,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "ROBERTO DORNELLES GOMES",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 4.7,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "TALITA AZEREDO RAMOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": 8.2,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  },
+  {
+    "nome": "WESLEY PADILHA CUNHA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-03-11.json"
+  }
+]

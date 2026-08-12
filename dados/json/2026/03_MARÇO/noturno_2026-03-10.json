@@ -1,0 +1,137 @@
+[
+  {
+    "nome": "ALESSANDRA MALTA ALVES",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 1.5,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "CAIO NEVES LIMA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 8.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "DANILO XAVIER COSTA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "DOUGLAS TELLES CARVALHO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 6.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "HENRIQUE LINS RIBEIRO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "JÉSSICA VALENTE RODRIGUES",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 10.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "MONIQUE PIRES MELO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "NICOLE MEIRELES VIEIRA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 8.4,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "OTÁVIO MARINHO MACHADO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "PRISCILA JUNQUEIRA ALMEIDA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "REBECA FRANCO SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "ROBERTO DORNELLES GOMES",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 4.9,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "RODRIGO CAMARGO SILVA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 8.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "TALITA AZEREDO RAMOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  },
+  {
+    "nome": "WESLEY PADILHA CUNHA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-10.json"
+  }
+]

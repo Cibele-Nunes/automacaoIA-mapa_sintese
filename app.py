@@ -71,6 +71,7 @@ st.markdown(
     """
     <h1 style='font-size:48px;'>
     📊 Automação do Mapa Síntese
+    Versão 1.0.0
     </h1>
     """,
     unsafe_allow_html=True

@@ -1,0 +1,281 @@
+[
+  {
+    "nome": "ANDRE LUIZ FERREIRA",
+    "area": "LINGUAGENS E SUAS TECNULUUIAS",
+    "etapa": "Médio",
+    "nota": 7.6,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "ANDRE LUIZ FERREIRA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "BRUNA MACIEL VIEIRA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 4.1,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "BRUNA MACIEL VIEIRA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 2.5,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "CAIO NOGUEIRA BRAGA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "CAIO NOGUEIRA BRAGA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "DANIELA FRAGA JUSTO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "EDUARDO SOUZA PASCHOAL",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.2,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "FERNANDA LIMA GUIMARÃES",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": 3.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "GUILHERME ANTUNES DORNELLES",
+    "area": "REDAÇÃO",
+    "etapa": "Fundamental",
+    "nota": 7.1,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "IGOR MEDEIROS FARIAS",
+    "area": "REDAÇÃO",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "JULIA BERNARDES COUTO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "JULIA BERNARDES COUTO",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "KEVIN BORGES LINS",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 6.5,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "LARISSA ROCHA FONTES",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 8.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "MATHEUS PIRES TOLEDO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "MATHEUS PIRES TOLEDO",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "NICOLE PEIXOTO MEIRELES",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 2.5,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "NICOLE PEIXOTO MEIRELES",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 0.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "OTÁVIO MALTA CAMARGO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "OTÁVIO MALTA CAMARGO",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "PRISCILA CUNHA GUEDES",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 5.8,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "PRISCILA CUNHA GUEDES",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 3.5,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "RODRIGO AZEREDO RAMOS",
+    "area": "REDAÇÃO",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "SABRINA BUENO TELLES",
+    "area": "REDAÇÃO",
+    "etapa": "Fundamental",
+    "nota": 8.2,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "THIAGO FRANCO JUNQUEIRA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "THIAGO FRANCO JUNQUEIRA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "VANESSA VALENTE CRUZ",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.9,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "WESLEY PADILHA MOURA",
+    "area": "LINGUAGENS F SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 3.7,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "WESLEY PADILHA MOURA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 0.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  },
+  {
+    "nome": "YASMIM VIANA GODOY",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 9.1,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-09.json"
+  }
+]

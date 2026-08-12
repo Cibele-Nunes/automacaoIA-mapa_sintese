@@ -1,0 +1,110 @@
+[
+  {
+    "nome": "BEATRIZ SOUTO RAMOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": 9.1,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "BRUNO CAVALCANTI ROSA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "FELIPE NOGUEIRA CASTRO",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "GUSTAVO PEIXOTO DINIZ",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "JULIANA MEIRELES CRUZ",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 2.7,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "LARISSA GUIMARÃES ORTIZ",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 8.4,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "LEONARDO ANTUNES LIMA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 7.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "LETÍCIA TOLEDO GUEDES",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 8.9,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "MARIANA FROTA MENDES",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 4.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "NATÁLIA SALES VIANA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 7.8,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "RAFAEL DORNELLES MOURA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 4.5,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  },
+  {
+    "nome": "VINÍCIUS BARBOSA REIS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-03-11.json"
+  }
+]
