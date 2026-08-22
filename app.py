@@ -1,12 +1,14 @@
 import json
 import shutil
+from google import genai
 import streamlit as st
 from pathlib import Path
 from config import *
 from modulos.preprocessamento import (
     organizacao_arquivos,
     preprocessar_imagens,
-    agrupar_listas
+    agrupar_listas,
+    limpar_imagens_pos_extracao
 )
 
 from modulos.extracao import (
@@ -18,7 +20,6 @@ from modulos.tratamento import (
     executar_tratamento
 )
 
-from config import PASTA_RESULTADOS
 from modulos.preenchimento import (
     executar_preenchimento
 )
@@ -54,14 +55,6 @@ if ARQUIVO_CONFIG.exists():
         NOME_INSTITUICAO_PADRAO
     )
 
-if ARQUIVO_LOGO.exists():
-
-    st.image(
-        ARQUIVO_LOGO,
-        width=180,
-        caption="Logo atual"
-    )
-
 st.set_page_config(
     page_title="Automação do Mapa Síntese",
     layout="wide"
@@ -69,7 +62,7 @@ st.set_page_config(
 
 st.markdown(
     """
-    <h1 style='font-size:48px;'>
+    <h1 style='font-size:40px; margin:2px; padding:5px'>
     📊 Automação do Mapa Síntese
     Versão 1.0.0
     </h1>
@@ -90,7 +83,7 @@ st.markdown(
     }
 
     div[data-testid="stRadio"] label {
-        font-size: 1.1rem !important;
+        font-size: 2.1rem !important;
     }
 
     div[data-testid="stFileUploader"] label {
@@ -128,14 +121,33 @@ st.write(
 # MENU
 # =========================================================
 
-col1, col2, col3 = st.sidebar.columns([1, 2, 1])
+col1, col2, col3 = st.sidebar.columns([1, 3, 1])
 
 with col2:
-    st.image(
-        "assets/logo_padrao.png",
-        width=180
+    if ARQUIVO_LOGO.exists():
+
+        st.markdown(
+            '<div style="text-align: center;">',
+            unsafe_allow_html=True
         )
-    
+
+        st.image(
+            ARQUIVO_LOGO,
+            width=180
+        )
+
+        st.markdown(
+            '</div>',
+            unsafe_allow_html=True
+        )
+
+    else:
+
+        st.sidebar.image(
+            "assets/logo_padrao.png",
+            width=180
+        )
+
 st.sidebar.markdown(
     "<h4 style='text-align:center;'>Automação do Mapa Síntese</h4>",
     unsafe_allow_html=True
@@ -163,7 +175,8 @@ if modo != "⚙️ Configurações":
 
     ano = st.sidebar.selectbox(
             "Ano",
-            ["2026", "2025"]
+            ["2026", "2027", "2028", "2029", "2030", 
+             "2031", "2032", "2033", "2034", "2035"]
         )
 
     mes = st.sidebar.selectbox(
@@ -252,20 +265,32 @@ if modo == "⚙️ Configurações":
 
         Você pode alterar:
 
-        - 🏫 Nome da instituição
-        - 📷 Logo da instituição
+        - Nome da instituição
+        - Logo da instituição
+        - Inteligência Artificial
+
         """
     )
 
     nome_escola = st.text_input(
-        "🏫 Nome da instituição",
+        "Nome da instituição",
         value=nome_instituicao
     )
 
     logo_upload = st.file_uploader(
-        "Logo da instituição",
+        "Escudo da instituição",
         type=["png", "jpg", "jpeg"],
-        key="logo_escola"
+        key="escudo_escola"
+    )
+
+    st.subheader(
+        "Inteligência Artificial"
+    )
+
+    chave_gemini = st.text_input(
+        "Chave da API Gemini",
+        type="password",
+        help="Informe a chave da API utilizada pelo sistema para realizar a extração dos dados."
     )
 
     if st.button("💾 Salvar Configurações"):
@@ -274,6 +299,86 @@ if modo == "⚙️ Configurações":
             parents=True,
             exist_ok=True
         )
+
+        configuracoes = {
+            "nome_instituicao": nome_escola
+        }
+
+        with open(
+            ARQUIVO_CONFIG,
+            "w",
+            encoding="utf-8"
+        ) as f:
+            json.dump(
+                configuracoes,
+                f,
+                ensure_ascii=False,
+                indent=4
+            )
+
+        if logo_upload is not None:
+
+            with open(
+                ARQUIVO_LOGO,
+                "wb"
+            ) as f:
+
+                f.write(
+                    logo_upload.getbuffer()
+                )
+
+        if chave_gemini.strip():
+
+            CAMINHO_API_KEY.parent.mkdir(
+                parents=True,
+                exist_ok=True
+            )
+
+            with open(
+                CAMINHO_API_KEY,
+                "w",
+                encoding="utf-8"
+            ) as f:
+                f.write(chave_gemini.strip())
+
+        st.success(
+            "✅ Configurações salvas com sucesso!"
+        )
+
+    if st.button("🔎 Testar conexão com Gemini"):
+
+        try:
+
+            chave_salva = carregar_api_key()
+
+            cliente_teste = genai.Client(
+                api_key=chave_salva
+            )
+
+            resposta_teste = cliente_teste.models.generate_content(
+                model="gemini-2.5-flash",
+                contents="Responda apenas: OK"
+            )
+
+            if resposta_teste.text:
+
+                st.success(
+                    "✅ Conexão com a API Gemini realizada com sucesso!"
+                )
+
+        except FileNotFoundError:
+
+            st.warning(
+                "⚠️ A chave da API Gemini ainda não foi configurada. "
+                "Informe a chave e clique em 'Salvar Configurações' antes de testar."
+            )
+
+        except Exception:
+
+            st.error(
+                "❌ Não foi possível conectar à API Gemini. "
+                "Verifique se a chave está correta e se a API está disponível."
+            )
 
 # =========================================================
 # BOTÃO
@@ -420,6 +525,32 @@ if modo != "⚙️ Configurações":
 
                 logs.append("✅ Extração finalizada.")
                 
+                log_box.code("\n".join(logs))
+
+                # ==========================================================
+                # LIMPEZA DAS IMAGENS TEMPORÁRIAS
+                # ==========================================================
+
+                status.info("🧹 Limpando imagens temporárias...")
+
+                logs.append("🧹 Limpando imagens temporárias...")
+
+                log_box.code("\n".join(logs))
+
+                limpar_imagens_pos_extracao(
+                    lista_imagens,
+                    ano,
+                    mes
+                )
+
+                status.success(
+                    "✅ Imagens temporárias removidas."
+                )
+
+                logs.append(
+                    "✅ Imagens temporárias removidas."
+                )
+
                 log_box.code("\n".join(logs))
 
                 status.info("📥 Carregando JSONs extraídos...")

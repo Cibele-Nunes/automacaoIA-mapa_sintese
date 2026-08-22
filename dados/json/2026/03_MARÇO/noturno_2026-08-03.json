@@ -1,0 +1,497 @@
+[
+  {
+    "nome": "ALCINEIDE BRAZ OLIVEIRA LOBATO",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "ARON SINTES SILVA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 7.5,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "JOÃO VICTOR SILVEIRA ALBUQUERQUE",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "JOSEMIR GOMES DE JESUS SANTANA SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "JUAN PABLO DAIBER GONZALEZ",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 7.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "KAUAN DE JESUS REIS",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 5.5,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "KAUAN DE JESUS REIS",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 3.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "KELLY ALMEIDA SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "LUCAS COSTA CALDAS DO CARMO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "LUCAS COSTA CALDAS DO CARMO",
+    "area": "REDAÇÃO",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "LUCAS OLIVEIRA SOUZA SANTOS COSTA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "MACSON ROSARIO DE JESUS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 7.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "ARON SINTES SILVA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 8.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "BRUNA JESUS DA SILVA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "BRUNO KAIQUE SANTANA SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "BRUNO KAIQUE SANTANA SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "CINTIA MARIA ROCHA SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 5.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "CINTIA MARIA ROCHA SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "DERLANE SANTOS DA SILVA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "DIEGO MARCELO DA SILVA SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "EDLIZA BRITO COSTA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "FLÁVIO DOS SANTOS GOMES",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "GABRIEL ESTRELA MARQUES SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "JEFERSON DE SANTANA SIMÕES FILHO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "JEFERSON DE SANTANA SIMÕES FILHO",
+    "area": "REDAÇÃO",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "MANOEL HILARIO ALMEIDA DE OLIVEIRA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 3.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "MARIA CLARA PEREIRA GONÇALVES DE OLIVEIRA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 8.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "MARIA LUIZA NEMEN PAOLILO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "MARIA LUIZA NEMEN PAOLILO",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "MARINA RIBEIRO DOS SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 8.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "MARLI OLIVEIRA MENDES",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "MATEUS AZEVEDO SENA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 5.2,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "MATEUS OLIVEIRA MELO",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 5.2,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "NATAN YOHAN SANTANA DA SILVA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "NATAN YOHAN SANTANA DA SILVA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "PATRICIA DE SANTANA BRITO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": 8.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "PATRICIA DE SANTANA BRITO",
+    "area": "REDAÇÃO",
+    "etapa": "Fundamental",
+    "nota": 8.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "PATRICIA SANTOS DO AMOR DIVINO",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "PAULA FERNANDES DIAS NOVIS FIGUEIREDO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "PAULA FERNANDES DIAS NOVIS FIGUEIREDO",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "PEDRO BENEVIDES SANTOS DE JESUS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "PEDRO HENRIQUE SACRAMENTO SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "RAISSA FERNANDES GALO NASCIMENTO",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "RAVEL OLIVEIRA SANTANA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "RENATO RIQUELME DOS SANTOS FERRÃO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "ROSEMEIRE TOSTA DOS SANTOS DE SANTANA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "RUAN MARQUES DOS SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 0.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "SANDRA NASCIMENTO MATOS PURIDADE",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "SANDRA NASCIMENTO MATOS PURIDADE",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "TAIS DE OLIVEIRA DOS SANTOS",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": 5.2,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "TAIS DE OLIVEIRA DOS SANTOS",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "VINICIUS COSTA BRAZ",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 8.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "VITOR MANRICK SANTOS DE JESUS OLIVEIRA",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "VITOR MANRICK SANTOS DE JESUS OLIVEIRA",
+    "area": "REDAÇÃO",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  },
+  {
+    "nome": "YURI CERQUEIRA DO ROSARIO",
+    "area": "LINGUAGENS E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-03.json"
+  }
+]

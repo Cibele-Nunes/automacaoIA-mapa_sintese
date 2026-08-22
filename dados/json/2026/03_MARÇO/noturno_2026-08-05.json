@@ -1,0 +1,272 @@
+[
+  {
+    "nome": "ALBERT DE ALCÂNTARA OLIVEIRA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "AMANDA DOS SANTOS MATOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "ANA LUISA CUNHA DE SOUZA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 5.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "JOSELITA EVANGELISTA DE FREITAS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 2.7,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "KAUÃ VITOR PEREIRA CARDOSO",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "LAZARO JORGE OLIVEIRA DOS SANTOS JUNIOR",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "LORENA SOUZA SANTOS DE ANDRADE",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "LUCAS HENRIQUE ANTONIO ALEXANDRE",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "MAILON DE SA SILVA DOS SANTOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "MARCOS VINICIO PINHO DE SOUZA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "NATÁLIA FREITAS FIGUEIREDO DE JESUS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 2.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "PAULO ROBERT ARAÚJO DAS NEVES",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "RAFAEL SALUME NOSSA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "RENATA DE SOUZA SANTOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 3.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "ROSEMEIRE TOSTA DOS SANTOS DE SANTANA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "CARLOS VITOR DE JESUS FERREIRA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "CIBELE VITÓRIA SANTOS SANTIAGO",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "RUAN BASTOS DOS ANJOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 3.7,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "SHEILA SOUSA DOS SANTOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 1.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "VICTORIA SANTOS BITENCOURT",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "YASMIN QUEIROZ DA PAZ",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "ELIANA DOS SANTOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "ESTEFANE CERQUEIRA LIMA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "FRANCISCO BISPO GOMES NETO",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 6.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "GABRIEL SANTOS PASSOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "GABRIEL VINICIUS RENAN ALVES DA SILVA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "IGOR CARVALHO DOS SANTOS",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "ISRAEL PAULO FARIAS MONTEIRO",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "JOÃO VICTOR SILVEIRA ALBUQUERQUE",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  },
+  {
+    "nome": "JOHAN KENEDY SOUZA PEREIRA",
+    "area": "MATEMÁTICA E SUAS TECNOLOGIAS",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-05.json"
+  }
+]

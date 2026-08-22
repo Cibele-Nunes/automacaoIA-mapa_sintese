@@ -81,7 +81,8 @@ Sua função é transcrever a tabela exatamente como ela aparece, sem qualquer i
 2.	Proibição de Inferências: Não tente adivinhar nomes, áreas ou notas baseando-se no contexto ou em linhas anteriores.
 3.	Integridade dos Registros: Nunca mude a área de um aluno ou redistribua notas. Cada linha deve ser tratada como um dado isolado e imutável.
 4.	Dados Ausentes: Se uma célula estiver em branco, use null ou "" (string vazia) no JSON. Nunca invente valores para "completar" o objeto.
-5.	Sem Reorganização: Mantenha a ordem dos dados conforme aparecem visualmente na imagem.
+5.	Prioridade: Se um nome estiver repetido, um na tabela e outro manuscrito pelo professor, considere a nota dada no manuscrito do professor.
+6. Sem Reorganização: Mantenha a ordem dos dados conforme aparecem visualmente na imagem.
 
 ==============================================
 ALERTA CRÍTICO: PROCESSAMENTO DE ÁREAS DUPLAS
@@ -302,4 +303,4 @@ OFFSET_AREAS = {
     "CIÊNCIAS": 7
 }
 
-NOME_INSTITUICAO_PADRAO = "Instituição não configurada"
+NOME_INSTITUICAO_PADRAO = "Nome da Instituição"

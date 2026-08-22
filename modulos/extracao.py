@@ -9,10 +9,6 @@ from utils.persistencia import carregar_listas_pendentes, salvar_listas_pendente
 
 from config import carregar_api_key
 
-client = genai.Client(api_key=carregar_api_key())
-if not client:
-    raise ValueError("Falha ao inicializar cliente Gemini.")
-
 def juntar_imagens_vertical(lista_caminhos_imagens):
     """
     Recebe uma lista de caminhos de imagens (strings)
@@ -76,6 +72,10 @@ def extrair_lista_completa(imagens):
     if imagem_unica is None:
         print("❌ Nenhuma imagem válida para envio.")
         return None
+
+    client = genai.Client(
+        api_key=carregar_api_key()
+    )
 
     with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as temp:
         caminho_temp = temp.name
@@ -185,6 +185,8 @@ def extrair_lista_completa(imagens):
 def executar_extracao(listas, ano, mes, progress_bar=None):
     print("Iniciando extração com IA...")
 
+    extracao_sucesso = True
+
     pasta_json = (PASTA_JSON_EXTRAIDO_BASE / ano / mes)
 
     #=========================================================
@@ -221,7 +223,8 @@ def executar_extracao(listas, ano, mes, progress_bar=None):
                 continue
 
             if resultado is None:
-                print("❌ Erro não recuperável. Pulando.")
+                print("❌ Erro não recuperável.")
+                extracao_sucesso = False
                 listas_para_remover.append(nome_lista)
                 continue
 
@@ -276,18 +279,25 @@ def executar_extracao(listas, ano, mes, progress_bar=None):
 
             if resposta != "s":
                 print("🛑 Processamento interrompido pelo usuário.")
-                break
+                return False
 
             ciclo = 1
 
         # espera antes de novo ciclo (evita sobrecarga)
         if listas_pendentes:
-            print("\n⏳ Aguardando 2 minutos antes do próximo ciclo...")
-            time.sleep(120)
+            print(
+                f"⚠️ Extração não concluída. "
+                f"{len(listas_pendentes)} listas permanecem pendentes."
+            )
 
-    # espera antes do novo ciclo
-    if CAMINHO_PENDENTES.exists():
-        CAMINHO_PENDENTES.unlink()
-        print("🧹 Arquivo de pendentes removido (tudo concluído)")
+            return False
 
-    print("Extração finalizada.")
+
+        # espera antes do novo ciclo
+        if CAMINHO_PENDENTES.exists():
+            CAMINHO_PENDENTES.unlink()
+            print("🧹 Arquivo de pendentes removido (tudo concluído)")
+
+        print("Extração finalizada.")
+
+        return extracao_sucesso

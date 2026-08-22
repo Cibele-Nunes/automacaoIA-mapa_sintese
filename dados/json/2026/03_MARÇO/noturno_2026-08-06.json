@@ -1,0 +1,272 @@
+[
+  {
+    "nome": "ADILSON DA SILVA DE JESUS",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Fundamental",
+    "nota": 3.7,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "AISHA RODRIGUES RAMOS",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 6.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "ALBERT DE ALCÂNTARA OLIVEIRA",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "CAMILA SANTANA",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 7.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "CARLOS VITOR DE JESUS FERREIRA",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "CIBELE VITÓRIA SANTOS SANTIAGO",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "ESTEFANE CERQUEIRA LIMA",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "FELIPE JAQUEIRA CARNEIRO RIBEIRO",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "GABRIEL BRAGA DOS SANTOS",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 5.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "GABRIEL SANTOS PASSOS",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "GABRIEL VINICIUS RENAN ALVES DA SILVA",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "ISRAEL PAULO FARIAS MONTEIRO",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "JENIFER OLIVEIRA VASCONCELOS BATISTA",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 4.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "JESUELE DOS SANTOS COSTA",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "JOÃO VICTOR SILVEIRA ALBUQUERQUE",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "JOSELITA EVANGELISTA DE FREITAS",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 4.3,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "LÁZARO BARROS DOS SANTOS",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "LÁZARO JORGE OLIVEIRA DOS SANTOS JUNIOR",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "LETICIA CONCEIÇÃO BURI",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 2.3,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "LORENA SOUZA SANTOS DE ANDRADE",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "LUCAS HENRIQUE ANTONIO ALEXANDRE",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "MAILON DE SA SILVA DOS SANTOS",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Fundamental",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "MARLI OLIVEIRA MENDES",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 3.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "PAULO VICTOR MIRANDA DOS SANTOS",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "ROSEMEIRE TOSTA DOS SANTOS DE SANTANA",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "RUAN BASTOS DOS ANJOS",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 7.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "SARA MALACARNE ANDRADE",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "SHEILA SOUSA DOS SANTOS",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 3.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "TIERRY VEIGA MARQUES",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  },
+  {
+    "nome": "YASMIN QUEIROZ DA PAZ",
+    "area": "CIÊNCIAS DA NATUREZA",
+    "etapa": "Médio",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "noturno_2026-08-06.json"
+  }
+]

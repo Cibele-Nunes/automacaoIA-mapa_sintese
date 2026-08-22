@@ -1,0 +1,254 @@
+[
+  {
+    "nome": "ADRIELE COSTA DA SILVA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "ARON SINTES SILVA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 8.5,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "CINTIA MARIA ROCHA SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "DARA REBECA RODRIGUES DE SOUSA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO FUNDAMENTAL",
+    "nota": 0.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "DERLANE SANTOS DA SILVA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "EDLIZA BRITO COSTA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "GABRIEL ESTRELA MARQUES SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 6.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "JEFERSON DE SANTANA SIMÕES FILHO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "JUAN PABLO DAIBER GONZALEZ",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 8.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "KAUAN DE JESUS REIS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 5.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "KELLY ALMEIDA SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "LORENA MASCARENHAS DO CARMO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "LORENA SOUZA SANTOS DE ANDRADE",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "MACSON ROSARIO DE JESUS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "MANOEL HILARIO ALMEIDA DE OLIVEIRA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 3.3,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "MARINA RIBEIRO DOS SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 7.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "NATAN YOHAN SANTANA DA SILVA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "PATRICIA DE SANTANA BRITO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "PAULA FERNANDES DIAS NOVIS FIGUEIREDO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "PEDRO BENEVIDES SANTOS DE JESUS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "RAISSA FERNANDES GALO NASCIMENTO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "RAVEL OLIVEIRA SANTANA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "RENATO RIQUELME DOS SANTOS FERRÃO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "ROBERTA GONÇALVES DE FREITAS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "SANDRA NASCIMENTO MATOS PURIDADE",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "TAIS DE OLIVEIRA DOS SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 7.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "VINICIUS COSTA BRAZ",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": 7.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  },
+  {
+    "nome": "YURI CERQUEIRA DO ROSARIO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "ENSINO MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": " ",
+    "arquivo_origem": "noturno_2026-08-04.json"
+  }
+]

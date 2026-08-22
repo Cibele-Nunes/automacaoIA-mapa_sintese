@@ -1,0 +1,290 @@
+[
+  {
+    "nome": "AISHA RODRIGUES RAMOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 7.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "AMANDA DOS SANTOS SOUZA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "ANA JULIA DE JESUS SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "ANA LARA SALES TRINDADE",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "ANANDA MIRANDA SANTIAGO MELO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 8.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "CAMILLE ANUNCIAÇÃO DOS SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "DANILO DE SÃO PEDRO DE SANTANA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "DAVI BORGES DOS SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "DÉBORA SILVA DOS SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 6.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "FELIPE JAQUEIRA CARNEIRO RIBEIRO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 8.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "JOSEMIR GOMES DE JESUS SANTANA SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "JULIA DE SA E SAMPAIO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 6.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "KAIQUE SANTOS DA PAIXÃO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": 5.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "KEILA DOS SANTOS BATISTA EVANGELISTA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "LARA ALMEIDA DE MELO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 7.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "LEANDRO OLIVEIRA DA SILVA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "LEIDE EVANGELISTA DOS SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "MARIA EDUARDA EVANGELISTA DE SOUZA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "MARIA LUIZA NEMEN PAOLILO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "MARIANA NASCIMENTO SILVA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": 7.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "MARIANE SOUZA SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 4.0,
+    "presenca": "PRESENTE",
+    "resultado": "REPROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "MARIANNA SPECTOR MOLINARI",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 5.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "MARLON DE JESUS COSTA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "MICHAEL WILLIAN DE ASSIS TOSTA SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "FUNDAMENTAL",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "PAULO GEOVANE FARIAS DOS SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 8.3,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "PEDRO LUIZ GOMES DA SILVA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "PÉROLA APARECIDA CUSTÓDIO RODRIGUES",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 7.7,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "REBECA DE FIGUEIREDO QUINTANILHA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "ROBSON JOSÉ SILVA",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": null,
+    "presenca": "AUSENTE",
+    "resultado": "",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "ROSALY COSTA RIBEIRO",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "IGOR CAFÉ FERREIRA DOS SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  },
+  {
+    "nome": "DAVI BORGES DOS SANTOS",
+    "area": "CIÊNCIAS HUMANAS",
+    "etapa": "MÉDIO",
+    "nota": 5.0,
+    "presenca": "PRESENTE",
+    "resultado": "APROVADO",
+    "arquivo_origem": "vespertino_2026-08-04.json"
+  }
+]

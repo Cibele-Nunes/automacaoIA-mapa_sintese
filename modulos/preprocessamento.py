@@ -283,6 +283,68 @@ def preprocessar_imagens(lista_imagens, ano, mes, progress_bar=None):
 
     return lista_processadas
 
+def limpar_imagens_pos_extracao(lista_imagens, ano, mes):
+    """
+    Remove as imagens temporárias após a conclusão
+    bem-sucedida da extração.
+
+    Remove:
+    - imagens originais;
+    - imagens pré-processadas;
+    - imagens segmentadas.
+    """
+
+    print("\n🧹 Iniciando limpeza das imagens temporárias...")
+
+    # ==========================================================
+    # 1. REMOVER IMAGENS ORIGINAIS
+    # ==========================================================
+
+    for caminho in lista_imagens:
+
+        caminho = Path(caminho)
+
+        try:
+            if caminho.exists():
+                caminho.unlink()
+                print(f"🗑️ Imagem original removida: {caminho}")
+
+        except Exception as e:
+            print(
+                f"⚠️ Não foi possível remover "
+                f"{caminho}: {e}"
+            )
+
+    # ==========================================================
+    # 2. REMOVER IMAGENS PROCESSADAS
+    # ==========================================================
+
+    pasta_processadas = (
+        PASTA_IMAGENS_PROCESSADAS_BASE
+        / ano
+        / mes
+    )
+
+    if pasta_processadas.exists():
+
+        for arquivo in pasta_processadas.rglob("*"):
+
+            if arquivo.is_file():
+
+                try:
+                    arquivo.unlink()
+                    print(
+                        f"🗑️ Imagem processada removida: "
+                        f"{arquivo}"
+                    )
+
+                except Exception as e:
+                    print(
+                        f"⚠️ Não foi possível remover "
+                        f"{arquivo}: {e}"
+                    )
+
+    print("🧹 Limpeza das imagens concluída.")
 
 # ==========================================================
 # AGRUPAMENTO
